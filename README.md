@@ -1,1 +1,8 @@
-# top-todo-list
+- Ideas of what I want to apply to this project:
+    - Factory functions
+    - Modules
+    -IIFES for functions to execute on boot up
+    -Prototyping of objects (projects - todos)
+    -DRY programming
+    -Single responsability principle
+    -Open Closed Principle
