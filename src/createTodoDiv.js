@@ -1,1 +1,11 @@
-hi = bye;
+import askForTodoInput from "./createTodoObject"
+
+const createTodoDiv = () =>{
+    // 
+
+    // 
+
+    // 
+
+    // 
+}

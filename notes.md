@@ -1,21 +1,21 @@
 PROJECT GENERAL SCHEMA:
-- *Todos* will be dinamically created objects, so use a factory function inside a module
+- *TODOS* will be dinamically created objects, so use a factory function inside a module
     - Todo properties: title, description, dueDate, priority, notes, checklist
     - These properties are entered via alert input (for now)
 
-- *Projects* will be dinamically created objects, which will store todos.
+- *PROJECTS* will be dinamically created objects, which will store todos.
     - With an IIFE, execute the project the user has decided to put as default when the app   first opens
     - Let the user decide dinamically which todos go to each project
 
-- *UI functionality* should:
+- *UI FUNCTIONALITY* should:
     - Be able to view all projects
     - View all todos in each project (show title, due date and different color for priority)
     - Expand todos to see and edit the details
     - Delete a todo
 
-- Separate *application logic* (creating new todos, setting them as complete, changing todo priority) and *DOM-creation functionality* in different modules.
+- Separate *APPLICATION LOGIC* (creating new todos, setting them as complete, changing todo priority) and *DOM-CREATION FUNCTIONALITY* in different modules.
 
-- Modules idea:
+- *MODULES* idea:
 
     :Aplication-logic
         -createProjectObject (create new project object and store it into an array)
@@ -24,6 +24,7 @@ PROJECT GENERAL SCHEMA:
         -filterTodayTodos (will filter the list of all todos by current date to due and send to loadTodayTodosView )
         -filterUpcomingTodos (will filter the list of all todos if date is among the following 15 days)
         -deleteTodo (input event attached to a button located at the todos div)
+        -objectStorage (2 arrays with references to the objects contained)
 
     :DOM-creation
         -createProjectDiv (imports createProjectObject)
