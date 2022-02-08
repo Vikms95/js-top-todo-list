@@ -18,6 +18,7 @@ PROJECT GENERAL SCHEMA:
 - *MODULES* idea:
 
     :Aplication-logic
+        -createStaticElements(will send created elements to       loadMainPageElementsView)
         -createProjectObject (create new project object and store it into an array)
         -createTodoObject (create new todo object and store it into an array)
         -loadGeneralProjects (will get all projects from an array and send them to loadGeneralProjectsView )
@@ -27,6 +28,7 @@ PROJECT GENERAL SCHEMA:
         -objectStorage (2 arrays with references to the objects contained)
 
     :DOM-creation
+        -loadStaticElementsView
         -createProjectDiv (imports createProjectObject)
         -createTodoDiv (imports createTodoObject)
         -createSideBarDiv (imports createSideBarObject.js)
@@ -37,4 +39,9 @@ PROJECT GENERAL SCHEMA:
         -deleteTodoFromProjectView (receives input from deleteTodoFromProject.js, whenever triggered, this one removes the current todo from view )
 
 
-1. Show random todo on screen
+<!-- - Show random todo on screen -->
+- Add new button to trigger createTodoDiv:
+    - Create it upon page load
+
+Buttons logic separation > createElement (loadStaticElements)
+                            addEventListener 
