@@ -4,7 +4,7 @@ PROJECT GENERAL SCHEMA:
     - These properties are entered via alert input (for now)
 
 - *PROJECTS* will be dinamically created objects, which will store todos.
-    - With an IIFE, execute the project the user has decided to put as default when the app   first opens
+    - With an IIFE, execute the project the user has decided to put as default when the app first opens
     - Let the user decide dinamically which todos go to each project
 
 - *UI FUNCTIONALITY* should:

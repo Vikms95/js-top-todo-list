@@ -11,7 +11,7 @@ const createTodoDiv = () =>{
     // Create header div (row) with 2 divs, title h1 and dueDate div
     // Create div for description and notes(?)
     const header = document.createElement('div')
-    const title = document.createElement('h1')
+    const title = document.createElement('div')
     const dueDate = document.createElement('div')
     const description = document.createElement('div')
 
@@ -53,9 +53,19 @@ const createTodoDiv = () =>{
     description.textContent = todoObject.description
 
     // Change title bg depending on property value 'priority' 
+    title.style.backgroundColor = checkTodoPriority(todoObject)
 
     // Return container to be appended in index.js
     return container
 }
 
 export default createTodoDiv
+
+function checkTodoPriority(todo){
+    const PRIORITY_COLORS = {
+        1: 'blue',
+        2: 'yellow',
+        3: 'red'
+    }
+    return PRIORITY_COLORS[todo.priority]
+}
