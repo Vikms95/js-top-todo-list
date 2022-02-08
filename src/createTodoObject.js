@@ -1,10 +1,10 @@
 import todosStorage from "./objectsStorage";
 
-const createTodoObject = (title, dueDate, priority) =>{
-    let description;
+const createTodoObject = (title, dueDate, priority,description) =>{
+    // let description;
     let notes;
-    let checkList;
-    return{title,dueDate,priority,description,notes,checkList}
+    let checkmark;
+    return{title,dueDate,priority,description,notes,checkmark}
 }
 
 const askForTodoInput = () => {
@@ -14,9 +14,12 @@ const askForTodoInput = () => {
     if(dueDate === null) return
     let priority = prompt('Enter priority (1 = low, 3 = high)')
     if(priority === null) return
+    let description = prompt('Enter description')
+    if(description === null) return
 
-    let todo = createTodoObject(title,dueDate,priority)
+    let todo = createTodoObject(title,dueDate,priority,description)
     todosStorage.push(todo)
+    console.log(todosStorage)
     return todo;
 }
 

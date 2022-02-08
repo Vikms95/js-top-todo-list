@@ -35,3 +35,6 @@ PROJECT GENERAL SCHEMA:
         -loadTodayTodosView (loads all todos with due date for the current day)
         -loadUpcomningTodosView (loads all todos for the following 15 days as due date)
         -deleteTodoFromProjectView (receives input from deleteTodoFromProject.js, whenever triggered, this one removes the current todo from view )
+
+
+1. Show random todo on screen

@@ -1,5 +1,5 @@
 let todosStorage = []
-let projectsStorage = []
+// let projectsStorage = []
 
 export default todosStorage
-export default projectsStorage
+// export default projectsStorage

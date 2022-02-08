@@ -1,0 +1,28 @@
+/* body{
+
+} */
+
+.todo-container{
+    display: flex;
+    flex-flow: row;
+
+    border: solid 1px black;
+}
+
+.todo{
+    display: flex;
+    border: solid 1px black;
+}
+
+.todo.body{
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
