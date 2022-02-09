@@ -19,7 +19,6 @@ const askForTodoInput = () => {
 
     let todo = createTodoObject(title,dueDate,priority,description)
     todosStorage.push(todo)
-    console.log(todosStorage)
     return todo;
 }
 

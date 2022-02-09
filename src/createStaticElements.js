@@ -5,11 +5,16 @@ function createStaticElements(){
     // Create filter upcoming todos button function
 }
 
-export default createStaticElements
 
-function newEventListener(element,fn){
-    const newTodo = document.createElement(element)
-    newTodo.addEventListener('click', () => {
-        fn()
+
+function newTodoEventListener(element,fn){
+    element.addEventListener('click', () => {
+        const container = document.getElementById('content')
+        const element = fn()
+        container.appendChild(element)
+        
     })
+    
 }
+
+export default newTodoEventListener

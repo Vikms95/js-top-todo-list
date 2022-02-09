@@ -1,11 +1,28 @@
-/* body{
+body{
+    margin: 0;
+}
 
-} */
+#content{
+    display: flex;
+    flex-direction: row nowrap;
+}
+
+button.home{
+    padding: 20px 30px;
+    background-color: transparent;
+}
+
+.nav-bar{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 30px;
+    gap: 20px;
+}
 
 .todo-container{
     display: flex;
     flex-flow: row;
-    max-width: 400px;
+    max-width: 600px;
     border:none;
 
 }
