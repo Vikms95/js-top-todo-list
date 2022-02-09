@@ -28,7 +28,7 @@ button.nav-button{
     color: rgb(126, 26, 26);
     font-weight: 900;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 button.nav-button:hover{
@@ -38,36 +38,36 @@ button.nav-button:hover{
 
 #dynamic-content{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
+    justify-content: flex-start;
     width: 100%;
-    padding: 40px;
+
 }
 
 .todo-container{
     display: flex;
     flex-flow: row;
+    flex: 1 0 auto;
     margin: 20px;
-    border:none;
-    width: 100vh;
+    /* border:none; */
+    width: 80%;
     max-height: 200px;
 }
 
 .todo{
     display: flex;
-    border: solid 1px black;
+    
 }
 
 .todo.body{
     display: flex;
     flex-direction: column;
-    max-width: 700px;
-    max-height: 500px;
 }
 
 .checkmark{
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 10px;
     border:none;
     
 }
@@ -100,20 +100,27 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
+    border: solid 1px black;
     padding: 5px 30px;
-    width: 50%;
+    width: fit-content;
+    max-width: 50%;
 }
 
 .due-date{
     display: flex;
-    justify-content: flex-end;
-    width: 50%;
+    justify-content: flex-start;
+    width: fit-content;
     padding: 5px 30px;
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+    border-top-right-radius: 20px;
 }
 
 .description{
     display: flex;
-    height: 100%;
-    padding: 15px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    flex: 1 0 auto;
+    border-top: solid 1px black;
 }
