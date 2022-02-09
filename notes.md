@@ -40,8 +40,4 @@ PROJECT GENERAL SCHEMA:
 
 
 <!-- - Show random todo on screen -->
-- Add new button to trigger createTodoDiv:
-    - Create it upon page load
-
-Buttons logic separation > createElement (loadStaticElements)
-                            addEventListener 
+<!-- - Add static elements on nar bar upon page load -->
