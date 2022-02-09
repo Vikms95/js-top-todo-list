@@ -8,7 +8,9 @@ function loadStaticElementsView (){
     const dynamicContentContainer = document.createElement('div')
     
     //Static elements on the navigation bar
-    const navigationBarHeader = document.createElement('h2')
+    const navigationBarHeader1 = document.createElement('h2')
+    const navigationBarHeaderLine = document.createElement('hr')
+    const navigationBarHeader2 = document.createElement('h2')
     const defaultProjectButton = document.createElement('button')
     const newTodoButton = document.createElement('button')
     const todayTodosButton = document.createElement('button')
@@ -20,7 +22,9 @@ function loadStaticElementsView (){
     //Appendings
     contentReference.appendChild(navigationBar)
     contentReference.appendChild(dynamicContentContainer)
-    navigationBar.appendChild(navigationBarHeader)
+    navigationBar.appendChild(navigationBarHeader1)
+    navigationBar.appendChild(navigationBarHeaderLine)
+    navigationBar.appendChild(navigationBarHeader2)
     navigationBar.appendChild(defaultProjectButton)
     navigationBar.appendChild(newTodoButton)
     navigationBar.appendChild(todayTodosButton)
@@ -28,7 +32,9 @@ function loadStaticElementsView (){
     
     //Class assignments
     navigationBar.classList.add('nav-bar')
-    navigationBarHeader.classList.add('header')
+    navigationBarHeader1.classList.add('header1')
+    navigationBarHeaderLine.classList.add('header-line')
+    navigationBarHeader2.classList.add('header2')
     dynamicContentContainer.id = 'dynamic-content'
     defaultProjectButton.classList.add('nav-button')
     newTodoButton.classList.add('nav-button')
@@ -36,7 +42,8 @@ function loadStaticElementsView (){
     upcomingTodosButton.classList.add('nav-button')
     
     //Property changes
-    navigationBarHeader.textContent = 'Todo App'
+    navigationBarHeader1.textContent = 'Todo'
+    navigationBarHeader2.textContent = 'App'
     defaultProjectButton.textContent = 'Home'
     newTodoButton.textContent = 'New task'
     todayTodosButton.textContent = 'Today'
