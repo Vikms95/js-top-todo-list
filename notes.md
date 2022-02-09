@@ -45,3 +45,6 @@ PROJECT GENERAL SCHEMA:
 <!-- - Make todos fit properly on dynamic content container:
     - Todo not appending to dynamic content container? Reference is recognized in console.log()
     ! In the createTodoDiv function I was returning the todo container, not the dynamicElementsContainer -->
+
+<!-- - Make todo fit the whole width of the screen -->
+<!-- - Make description and border not overflow when page is shrinked -->
