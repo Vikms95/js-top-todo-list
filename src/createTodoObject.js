@@ -8,16 +8,18 @@ const createTodoObject = (title, dueDate, priority,description) =>{
 }
 
 const askForTodoInput = () => {
-    let title = prompt('Enter title')
-    if(title === null) return
-    let dueDate = prompt('Enter due date')
-    if(dueDate === null) return
-    let priority = prompt('Enter priority (1 = low, 3 = high)')
-    if(priority === null) return
-    let description = prompt('Enter description')
-    if(description === null) return
+    // let title = prompt('Enter title')
+    // if(title === null) return
+    // let dueDate = prompt('Enter due date')
+    // if(dueDate === null) return
+    // let priority = prompt('Enter priority (1 = low, 3 = high)')
+    // if(priority === null) return
+    // let description = prompt('Enter description')
+    // if(description === null) return
 
-    let todo = createTodoObject(title,dueDate,priority,description)
+    // let todo = createTodoObject(title,dueDate,priority,description)
+    // Real code above, test code below
+    let todo = createTodoObject('Title','29-04','1','Placeholder long description')
     todosStorage.push(todo)
     return todo;
 }

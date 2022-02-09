@@ -4,6 +4,7 @@ PROJECT GENERAL SCHEMA:
     - These properties are entered via alert input (for now)
 
 - *PROJECTS* will be dinamically created objects, which will store todos.
+    - Project it's just an object, with an array of todo's inside and some property and methods to differentiate them
     - With an IIFE, execute the project the user has decided to put as default when the app first opens
     - Let the user decide dinamically which todos go to each project
 
@@ -41,3 +42,6 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Show random todo on screen -->
 <!-- - Add static elements on nar bar upon page load -->
+<!-- - Make todos fit properly on dynamic content container:
+    - Todo not appending to dynamic content container? Reference is recognized in console.log()
+    ! In the createTodoDiv function I was returning the todo container, not the dynamicElementsContainer -->

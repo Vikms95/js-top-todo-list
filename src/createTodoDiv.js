@@ -3,6 +3,8 @@ import askForTodoInput from "./createTodoObject"
 // Will be called whenever the 'new todo' button is pressed, 
 // it chain calls createTodoObject > askForTodoInput
 const createTodoDiv = () =>{
+
+    let dynamicElementsContainer = document.getElementById('dynamic-content')
     // Create container div(row), checkmark div (column), todo div (column) 
     const container = document.createElement('div')
     const checkmark = document.createElement('div')
@@ -15,7 +17,8 @@ const createTodoDiv = () =>{
     const dueDate = document.createElement('div')
     const description = document.createElement('div')
 
-    // Append to container div > checkmark div, todo div
+    // Append container to todoElementsContainer, container div > checkmark div, todo div
+    dynamicElementsContainer.appendChild(container)
     container.appendChild(checkmark)
     container.appendChild(todo)
 
@@ -56,14 +59,14 @@ const createTodoDiv = () =>{
     title.style.backgroundColor = checkTodoPriority(todoObject)
 
     // Return container to be appended in index.js
-    return container
+    return dynamicElementsContainer
 }
 
 export default createTodoDiv
 
 function checkTodoPriority(todo){
     const PRIORITY_COLORS = {
-        1: 'blue',
+        1: 'aquamarine',
         2: 'yellow',
         3: 'red'
     }

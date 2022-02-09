@@ -16,9 +16,7 @@ function loadStaticElementsView (){
     //Static elements on the dynamic content container
     //
     
-    //Event listeners assignments (imported from createStaticElements)
-    newTodoButtonEventListener(newTodoButton,createTodoDiv)
-
+    
     //Appendings
     contentReference.appendChild(navigationBar)
     contentReference.appendChild(dynamicContentContainer)
@@ -27,23 +25,25 @@ function loadStaticElementsView (){
     navigationBar.appendChild(newTodoButton)
     navigationBar.appendChild(todayTodosButton)
     navigationBar.appendChild(upcomingTodosButton)
-
+    
     //Class assignments
     navigationBar.classList.add('nav-bar')
     navigationBarHeader.classList.add('header')
-    dynamicContentContainer.classList.add('dynamic-content')
+    dynamicContentContainer.id = 'dynamic-content'
     defaultProjectButton.classList.add('nav-button')
     newTodoButton.classList.add('nav-button')
     todayTodosButton.classList.add('nav-button')
     upcomingTodosButton.classList.add('nav-button')
-
+    
     //Property changes
     navigationBarHeader.textContent = 'Todo App'
     defaultProjectButton.textContent = 'Home'
     newTodoButton.textContent = 'New task'
     todayTodosButton.textContent = 'Today'
     upcomingTodosButton.textContent = 'Upcoming'
-
+    
+    //Event listeners assignments (imported from createStaticElements)
+    newTodoButtonEventListener(newTodoButton,createTodoDiv)
 }
 
 export default loadStaticElementsView
