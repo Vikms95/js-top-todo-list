@@ -1,6 +1,6 @@
-import createTodoDiv from "./createTodoDiv";
-import todosStorage from "./objectsStorage";
-import loadStaticElementsView from "./renderViewStaticElements";
+// import renderViewTodo from './view/renderViewTodo';
+// import todosStorage from './logic/objectsStorage';
+import renderViewStaticElements from './view/renderViewStaticElements'
 
 // const contentReference = document.getElementById('content')
-loadStaticElementsView()
+renderViewStaticElements()

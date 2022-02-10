@@ -19,25 +19,23 @@ PROJECT GENERAL SCHEMA:
 - *MODULES* idea:
 
     :Aplication-logic
-        -createStaticElements(will send created elements to       loadMainPageElementsView)
         -createProjectObject (create new project object and store it into an array)
+        -createStaticElements(will send created elements to       loadMainPageElementsView)
         -createTodoObject (create new todo object and store it into an array)
-        -loadGeneralProjects (will get all projects from an array and send them to loadGeneralProjectsView )
-        -filterTodayTodos (will filter the list of all todos by current date to due and send to loadTodayTodosView )
-        -filterUpcomingTodos (will filter the list of all todos if date is among the following 15 days)
         -deleteTodo (input event attached to a button located at the todos div)
+        -filterTodayTodos (will filter the list of all todos by current date to due and send to loadTodayTodosView)
+        -filterUpcomingTodos (will filter the list of all todos if date is among the following 15 days)
         -objectStorage (2 arrays with references to the objects contained)
 
     :DOM-creation
-        -loadStaticElementsView
-        -createProjectDiv (imports createProjectObject)
-        -createTodoDiv (imports createTodoObject)
-        -createSideBarDiv (imports createSideBarObject.js)
-        -loadDefaultProjectView (loads a div for the project object and it's todos objects with default property set to true)
-        -loadGeneralProjectsView (loads all projects objects with it's todos objects)
-        -loadTodayTodosView (loads all todos with due date for the current day)
-        -loadUpcomningTodosView (loads all todos for the following 15 days as due date)
-        -deleteTodoFromProjectView (receives input from deleteTodoFromProject.js, whenever triggered, this one removes the current todo from view )
+        -renderViewDefaultProject (loads a div for the project object and it's todos objects with default property set to true)
+        -renderViewGeneralProjects (loads all projects objects with it's todos objects)
+        -renderViewProject (imports createProjectObject)
+        -renderViewStaticElements
+        -renderViewTodayTodos (loads all todos with due date for the current day)
+        -renderViewTodo (imports createTodoObject)
+        -renderViewTodoFromProject(?)
+        -renderViewUpcomningTodos (loads all todos for the following 15 days as due date)
 
 
 <!-- - Show random todo on screen -->
@@ -53,5 +51,8 @@ PROJECT GENERAL SCHEMA:
     <!-- - Delete the todo both from display -->
     <!-- - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove) -->
     - Delete todo from the *project's array it's attached to(to do later)*
+- Create empty project object
+
+
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

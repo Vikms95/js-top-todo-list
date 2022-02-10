@@ -1,9 +1,9 @@
-import askForTodoInput from "./createTodoObject"
-import addEventListenerDeleteButton from "./deleteTodo"
+import askForTodoInput from "../logic/createTodoObject"
+import addEventListenerDeleteButton from "../logic/deleteTodo"
 
 // Will be called whenever the 'new todo' button is pressed, 
 // it chain calls createTodoObject > askForTodoInput
-const createTodoDiv = () =>{
+const renderViewTodo = () =>{
 
     let dynamicElementsContainer = document.getElementById('dynamic-content')
     // Create container div(row), checkmark div (column), todo div (column) 
@@ -78,7 +78,7 @@ const createTodoDiv = () =>{
     return dynamicElementsContainer
 }
 
-export default createTodoDiv
+export default renderViewTodo
 
 function checkTodoPriority(todo){
     const PRIORITY_COLORS = {

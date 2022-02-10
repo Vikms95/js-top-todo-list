@@ -1,5 +1,5 @@
-import createTodoDiv from "./createTodoDiv"
-import newTodoButtonEventListener from "./createStaticElements"
+import renderViewTodo from "./renderViewTodo"
+import newTodoButtonEventListener from "../logic/createStaticElements"
 
 function loadStaticElementsView (){
     // Static containers
@@ -50,7 +50,7 @@ function loadStaticElementsView (){
     upcomingTodosButton.textContent = 'Upcoming'
     
     //Add event listeners to static elements (imported from createStaticElements)
-    newTodoButtonEventListener(newTodoButton,createTodoDiv)
+    newTodoButtonEventListener(newTodoButton,renderViewTodo)
 }
 
 export default loadStaticElementsView
