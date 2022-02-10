@@ -36,7 +36,7 @@ const createTodoObject = (title, dueDate, priority,description) =>{
         }
 }
 
-let generateUniqueID = (function(){
+const generateUniqueID = (function(){
     let id = 0
     return function() {return id++}
 })();

@@ -54,6 +54,7 @@ const createTodoDiv = () =>{
     // Call for askForTodoInput and store the object returned
     const todoObject = askForTodoInput()
     console.log(todoObject)
+    
 
     // Change text content of divs depending on the property values from the object
     deleteButton.textContent = 'X'
@@ -65,7 +66,7 @@ const createTodoDiv = () =>{
     title.style.backgroundColor = checkTodoPriority(todoObject)
 
     // Add event listeners to buttons within the todo div
-    addEventListenerDeleteButton(deleteButton)
+    addEventListenerDeleteButton(deleteButton,todoObject)
 
     // Return container to be appended in index.js
     return dynamicElementsContainer
