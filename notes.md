@@ -48,3 +48,6 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Make todo fit the whole width of the screen -->
 <!-- - Make description and border not overflow when page is shrinked -->
+ - Remove a todo:
+    - Add event listener for the checkmark div
+    - When triggered, delete the todo both from display, todo array and todo from the *project's array it's attached to(to do later)*

@@ -1,4 +1,5 @@
 import askForTodoInput from "./createTodoObject"
+import addEventListenerDeleteButton from "./deleteTodo"
 
 // Will be called whenever the 'new todo' button is pressed, 
 // it chain calls createTodoObject > askForTodoInput
@@ -7,7 +8,8 @@ const createTodoDiv = () =>{
     let dynamicElementsContainer = document.getElementById('dynamic-content')
     // Create container div(row), checkmark div (column), todo div (column) 
     const container = document.createElement('div')
-    const checkmark = document.createElement('div')
+    const buttons = document.createElement('div')
+    const deleteButton = document.createElement('button')
     const todo = document.createElement('div')
 
     // Create header div (row) with 2 divs, title h1 and dueDate div
@@ -19,8 +21,11 @@ const createTodoDiv = () =>{
 
     // Append container to todoElementsContainer, container div > checkmark div, todo div
     dynamicElementsContainer.appendChild(container)
-    container.appendChild(checkmark)
+    container.appendChild(buttons)
     container.appendChild(todo)
+
+    // Appends buttons to buttons container
+    buttons.appendChild(deleteButton)
 
     // Append to todo div > header div, description div 
     todo.appendChild(header)
@@ -32,8 +37,8 @@ const createTodoDiv = () =>{
 
     // Change div id/class 
     container.classList.add('todo-container')
-    checkmark.classList.add('todo')
-    checkmark.classList.add('checkmark')
+    buttons.classList.add('todo')
+    buttons.classList.add('checkmark')
     todo.classList.add('todo')
     todo.classList.add('body')
     
@@ -50,13 +55,16 @@ const createTodoDiv = () =>{
     const todoObject = askForTodoInput()
 
     // Change text content of divs depending on the property values from the object
-    checkmark.textContent = 'X'
+    deleteButton.textContent = 'X'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     description.textContent = todoObject.description
 
     // Change title bg depending on property value 'priority' 
     title.style.backgroundColor = checkTodoPriority(todoObject)
+
+    // Add event listeners to buttons within the todo div
+    addEventListenerDeleteButton(deleteButton)
 
     // Return container to be appended in index.js
     return dynamicElementsContainer

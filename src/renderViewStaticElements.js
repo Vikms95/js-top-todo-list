@@ -49,7 +49,7 @@ function loadStaticElementsView (){
     todayTodosButton.textContent = 'Today'
     upcomingTodosButton.textContent = 'Upcoming'
     
-    //Event listeners assignments (imported from createStaticElements)
+    //Add event listeners to static elements (imported from createStaticElements)
     newTodoButtonEventListener(newTodoButton,createTodoDiv)
 }
 
