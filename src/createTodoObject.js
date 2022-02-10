@@ -1,11 +1,5 @@
 import todosStorage from "./objectsStorage";
 
-const createTodoObject = (title, dueDate, priority,description) =>{
-    // let description;
-    let notes;
-    let checkmark;
-    return{title,dueDate,priority,description,notes,checkmark}
-}
 
 const askForTodoInput = () => {
     // let title = prompt('Enter title')
@@ -25,5 +19,26 @@ const askForTodoInput = () => {
     todosStorage.push(todo)
     return todo;
 }
+
+const createTodoObject = (title, dueDate, priority,description) =>{
+    let _id = generateUniqueID() // It will be kept private
+    let notes;
+    let checkmark = false;
+    
+    return{
+            _id,
+           title,
+           dueDate,
+           priority,
+           description,
+           notes,
+           checkmark
+        }
+}
+
+let generateUniqueID = (function(){
+    let id = 0
+    return function() {return id++}
+})();
 
 export default askForTodoInput;

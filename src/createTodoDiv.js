@@ -53,6 +53,7 @@ const createTodoDiv = () =>{
 
     // Call for askForTodoInput and store the object returned
     const todoObject = askForTodoInput()
+    console.log(todoObject)
 
     // Change text content of divs depending on the property values from the object
     deleteButton.textContent = 'X'
