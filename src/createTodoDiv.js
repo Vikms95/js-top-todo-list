@@ -37,6 +37,8 @@ const createTodoDiv = () =>{
 
     // Change div id/class 
     container.classList.add('todo-container')
+    container.classList.add('faded-out')
+
     buttons.classList.add('todo')
     buttons.classList.add('checkmark')
     todo.classList.add('todo')
@@ -54,7 +56,6 @@ const createTodoDiv = () =>{
     // Call for askForTodoInput and store the object returned
     const todoObject = askForTodoInput()
     console.log(todoObject)
-    
 
     // Change text content of divs depending on the property values from the object
     deleteButton.textContent = 'X'
@@ -64,6 +65,11 @@ const createTodoDiv = () =>{
 
     // Change title bg depending on property value 'priority' 
     title.style.backgroundColor = checkTodoPriority(todoObject)
+
+    // Add fading animation on todo creation
+    requestAnimationFrame(() => {
+        container.classList.remove("faded-out")
+      })
 
     // Add event listeners to buttons within the todo div
     addEventListenerDeleteButton(deleteButton,todoObject)
@@ -76,9 +82,9 @@ export default createTodoDiv
 
 function checkTodoPriority(todo){
     const PRIORITY_COLORS = {
-        1: 'aquamarine',
-        2: 'yellow',
-        3: 'red'
+        '1': 'lightskyblue',
+        '2': 'lightgoldenrodyellow',
+        '3': 'lightcoral'
     }
     return PRIORITY_COLORS[todo.priority]
 }

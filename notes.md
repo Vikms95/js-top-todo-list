@@ -51,5 +51,6 @@ PROJECT GENERAL SCHEMA:
  - Remove a todo:
     <!-- - Add event listener for the checkmark div -->
     <!-- - Delete the todo both from display -->
-    - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove)
+    <!-- - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove) -->
     - Delete todo from the *project's array it's attached to(to do later)*
+- Look into date library
