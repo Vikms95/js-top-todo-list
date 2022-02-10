@@ -38,7 +38,7 @@ button.nav-button:hover{
 
 #dynamic-content{
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
     justify-content: flex-start;
     width: 100%;
 
@@ -51,6 +51,7 @@ button.nav-button:hover{
     margin: 20px;
     width: 80%;
     max-height: 200px;
+    position: relative;
     transition: opacity 400ms;
     will-change: opacity;
 }
@@ -126,6 +127,6 @@ hr{
     align-items: flex-start;
     justify-content: center;
     padding: 10px;
-    flex: 1 0 auto;
+    flex: 1 0 200px;
     border-top: solid 1px black;
 }
