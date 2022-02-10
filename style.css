@@ -49,9 +49,13 @@ button.nav-button:hover{
     flex-flow: row;
     flex: 1 0 auto;
     margin: 20px;
-    /* border:none; */
     width: 80%;
     max-height: 200px;
+    transition: opacity 400ms;
+    will-change: opacity;
+}
+.todo-container.faded-out{
+    opacity: 0;
 }
 
 .todo{
@@ -108,7 +112,8 @@ hr{
 
 .due-date{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
     padding: 5px 30px;
     border-top: solid 1px black;
