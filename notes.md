@@ -54,7 +54,9 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Create empty project object -->
 <!-- - Initial styling project divs -->
-- Add event listener to project delete button
+- Add event listener to project delete button:
+    - Not pushing projects into array?
+- Make project and todo id independent
 - Attach todo to project:
 
 - Look into date library
