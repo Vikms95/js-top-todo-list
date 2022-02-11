@@ -34,7 +34,7 @@ const createTodoObject = (
   priority,
   description
 ) => {
-  let _id = generateUniqueID(); // It will be end up private, public for now
+  let _id = generateTodoUniqueID(); // It will be end up private, public for now
   let notes;
   let dueDate = format(new Date(dueYear, dueMonth, dueDay), "PPPP");
   let checkmark = false;
@@ -50,11 +50,11 @@ const createTodoObject = (
   };
 };
 
-const generateUniqueID = (function () {
+const generateTodoUniqueID = (function () {
   let id = 0;
   return function () {
     return id++;
   };
 })();
 
-export { askForTodoInput, generateUniqueID };
+export { askForTodoInput };

@@ -54,9 +54,11 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Create empty project object -->
 <!-- - Initial styling project divs -->
+<!-- - Make project and todo id independent  -->
+    ! I was using the same function for todo imported within the projects modules
+
 - Add event listener to project delete button:
-    - Not pushing projects into array?
-- Make project and todo id independent
+    Not pushing projects into array?
 - Attach todo to project:
 
 - Look into date library

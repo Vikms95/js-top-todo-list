@@ -1,5 +1,4 @@
 import { projectsStorage } from "./objectsStorage";
-import { generateUniqueID } from "./createTodoObject";
 
 const askForProjectInput = () => {
   // let title = prompt('Enter title')
@@ -14,7 +13,7 @@ const askForProjectInput = () => {
 };
 
 const createProjectObject = (title) => {
-  let _id = generateUniqueID(); // Will this be separate from todo increments?
+  let _id = generateProjectUniqueID(); // Will this be separate from todo increments?
   let _attachedProjectTodos = []; // Will store ID, then get compared with todosStorage, will be private
 
   return {
@@ -25,3 +24,11 @@ const createProjectObject = (title) => {
 };
 
 export default askForProjectInput;
+
+const generateProjectUniqueID = (function () {
+    let id = 0;
+    return function () {
+      return id++;
+    };
+  })();
+  
