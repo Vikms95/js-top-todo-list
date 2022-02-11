@@ -1,4 +1,4 @@
-import askForTodoInput from "../logic/createTodoObject"
+import {askForTodoInput} from "../logic/createTodoObject"
 import addEventListenerDeleteButton from "../logic/deleteTodo"
 
 // Will be called whenever the 'new todo' button is pressed, 

@@ -5,8 +5,8 @@ PROJECT GENERAL SCHEMA:
 
 - *PROJECTS* will be dinamically created objects, which will store todos.
     - Project it's just an object, with an array of todo's inside and some property and methods to differentiate them
+    - Let the user decide dinamically which todos go to each project (button in the todo and project, asking for todo or project title, inserting into the list if name is right)
     - With an IIFE, execute the project the user has decided to put as default when the app first opens
-    - Let the user decide dinamically which todos go to each project
 
 - *UI FUNCTIONALITY* should:
     - Be able to view all projects
@@ -34,7 +34,7 @@ PROJECT GENERAL SCHEMA:
         -renderViewStaticElements
         -renderViewTodayTodos (loads all todos with due date for the current day)
         -renderViewTodo (imports createTodoObject)
-        -renderViewTodoFromProject(?)
+        -renderViewTodoFromProject(todos related to project but only title, duedate, color and ability to expand to see it's description)
         -renderViewUpcomningTodos (loads all todos for the following 15 days as due date)
 
 
@@ -42,7 +42,7 @@ PROJECT GENERAL SCHEMA:
 <!-- - Add static elements on nar bar upon page load -->
 <!-- - Make todos fit properly on dynamic content container:
     - Todo not appending to dynamic content container? Reference is recognized in console.log()
-    ! In the createTodoDiv function I was returning the todo container, not the dynamicElementsContainer -->
+    ! In the createTodoDiv function I was returning the todo container, not the dynamicElementsContainer
 
 <!-- - Make todo fit the whole width of the screen -->
 <!-- - Make description and border not overflow when page is shrinked -->
@@ -51,6 +51,7 @@ PROJECT GENERAL SCHEMA:
     <!-- - Delete the todo both from display -->
     <!-- - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove) -->
     - Delete todo from the *project's array it's attached to(to do later)*
+
 - Create empty project object
 
 

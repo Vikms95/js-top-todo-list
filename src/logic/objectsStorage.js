@@ -1,4 +1,4 @@
 let todosStorage = []
-// let projectsStorage = []
+let projectsStorage = []
 
-export default todosStorage
+export {todosStorage,projectsStorage};
