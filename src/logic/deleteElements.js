@@ -7,9 +7,9 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
     element.parentNode.parentNode.remove();
     // Call the function that removes todo from general todo array
     deleteElementFromStorageArray(todoObject, todosStorage);
-    console.log(todosStorage.length);
+    console.log(todosStorage);
 
-    //TODO Call the function that removes todo from the project's array it is attached
+    //TODO Call the function that removes todo from the project's array it is attached to
   });
 }
 

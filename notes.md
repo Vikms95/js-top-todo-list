@@ -22,7 +22,8 @@ PROJECT GENERAL SCHEMA:
         -createProjectObject (create new project object and store it into an array)
         -createStaticElements(will send created elements to       loadMainPageElementsView)
         -createTodoObject (create new todo object and store it into an array)
-        -deleteTodo (input event attached to a button located at the todos div)
+        -deleteElements (delete todos from todo div, delete projects from project div)
+        -insertElements (insert todos from todo div, insert todos from project div)
         -filterTodayTodos (will filter the list of all todos by current date to due and send to loadTodayTodosView)
         -filterUpcomingTodos (will filter the list of all todos if date is among the following 15 days)
         -objectStorage (2 arrays with references to the objects contained)
@@ -60,6 +61,8 @@ TODO
 <!-- - Add event listener to project delete button > Projects being pushed, but not deleted: --> ! Was using todo event listener
 
 - Attach todo to project:
-
+    <!-- - Create button within todo div to insert a todo to a project: Create new file insertElements? -->
+    - Edge cases: Make projects imposible to have same title
+                  Make the input case insensitive  
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

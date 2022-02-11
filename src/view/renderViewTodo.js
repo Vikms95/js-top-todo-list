@@ -1,5 +1,6 @@
 import { askForTodoInput } from "../logic/createTodoObject";
 import { addEventListenerTodoDeleteButton } from "../logic/deleteElements";
+import { addEventListenerTodoAddToProject } from "../logic/insertElements";
 
 // Will be called whenever the 'new todo' button is pressed,
 // it chain calls createTodoObject > askForTodoInput
@@ -9,6 +10,7 @@ const renderViewTodo = () => {
   const container = document.createElement("div");
   const buttons = document.createElement("div");
   const deleteButton = document.createElement("button");
+  const addTodoToProjectButton = document.createElement("button")
   const todo = document.createElement("div");
 
   // Create header div (row) with 2 divs, title h1 and dueDate div
@@ -24,6 +26,7 @@ const renderViewTodo = () => {
   container.appendChild(todo);
 
   // Appends buttons to buttons container
+  buttons.appendChild(addTodoToProjectButton)
   buttons.appendChild(deleteButton);
 
   // Append to todo div > header div, description div
@@ -57,6 +60,7 @@ const renderViewTodo = () => {
   console.log(todoObject);
 
   // Change text content of divs depending on the property values from the object
+  addTodoToProjectButton.textContent = '>'
   deleteButton.textContent = "X";
   title.textContent = todoObject.title;
   dueDate.textContent = todoObject.dueDate;
@@ -72,7 +76,7 @@ const renderViewTodo = () => {
 
   // Add event listeners to buttons within the todo div
   addEventListenerTodoDeleteButton(deleteButton, todoObject);
-
+  addEventListenerTodoAddToProject(addTodoToProjectButton,todoObject)
   // Return container to be appended in index.js
   return dynamicElementsContainer;
 };
