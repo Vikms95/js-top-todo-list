@@ -24,4 +24,7 @@ function addEventListenerTodoAddToProject (element,todoObject){
     })
 }
 
+function addEventListenerTodoAddToProjectFromProject (){
+  // TODO 
+}
 export {addEventListenerTodoAddToProject}
