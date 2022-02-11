@@ -55,6 +55,12 @@ const renderViewTodo = () => {
   description.classList.add("todo");
   description.classList.add("description");
 
+  // Add fading animation on todo creation
+  requestAnimationFrame(() => {
+    container.classList.remove("faded-out");
+  });
+  
+
   // Call for askForTodoInput and store the object returned
   const todoObject = askForTodoInput();
   console.log(todoObject);
@@ -68,11 +74,6 @@ const renderViewTodo = () => {
 
   // Change title bg depending on property value 'priority'
   title.style.backgroundColor = checkTodoPriority(todoObject);
-
-  // Add fading animation on todo creation
-  requestAnimationFrame(() => {
-    container.classList.remove("faded-out");
-  });
 
   // Add event listeners to buttons within the todo div
   addEventListenerTodoDeleteButton(deleteButton, todoObject);

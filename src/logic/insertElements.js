@@ -11,7 +11,7 @@ function addEventListenerTodoAddToProject (element,todoObject){
       // and check if project title exist
 
       for (let i = 0; i < projectsStorage.length; i++) {
-        if(projectsStorage[i].title === projectTitleToInsert){
+        if(projectsStorage[i].title.toLowerCase() === projectTitleToInsert.toLowerCase()){
           // If project title exist, introduce todo object to the project's array of todos
           projectsStorage[i]._attachedProjectTodos.push(todoObject)
           console.log(projectsStorage[i]._attachedProjectTodos)

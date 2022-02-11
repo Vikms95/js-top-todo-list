@@ -35,6 +35,12 @@ const renderViewProject = () => {
   todoListContainer.classList.add("todo-list-container");
   todoList.classList.add("todo-list");
 
+  // Add fading animation on project creation
+  requestAnimationFrame(() => {
+    container.classList.remove("faded-out");
+  });
+  
+
   // Call for askForProjectInput and store the object returned
   const projectObject = askForProjectInput();
   console.log(projectObject);
@@ -46,10 +52,6 @@ const renderViewProject = () => {
   // Change title bg depending on property value 'priority'
   title.style.backgroundColor = "rgb(241, 214, 181)";
 
-  // Add fading animation on project creation
-  requestAnimationFrame(() => {
-    container.classList.remove("faded-out");
-  });
 
   // Add event listeners to buttons within the todo di
   addEventListenerProjectDeleteButton(deleteButton, projectObject);

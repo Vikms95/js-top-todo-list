@@ -62,7 +62,7 @@ TODO
 
 - Attach todo to project:
     <!-- - Create button within todo div to insert a todo to a project: Create new file insertElements? -->
-    - Edge cases: Make projects imposible to have same title
-                  Make the input case insensitive  
+- Make projects imposible to have same title, return a value to know the  rendering has to be canceled
+- Make the input case insensitive  
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/
