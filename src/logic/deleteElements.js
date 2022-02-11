@@ -7,9 +7,9 @@ function addEventListenerDeleteButton(element,todoObject){
     // Add event listener when clicked
     element.addEventListener('click', () =>{
     // Call the function that removes todo from display (deleting child element)
-        element.parentNode.parentNode.remove()
+    element.parentNode.parentNode.remove()
     // Call the function that removes todo from general todo array 
-        deleteTodoFromStorage(todoObject)
+    deleteTodoFromStorage(todoObject)
     //TODO Call the function that removes todo from the project's array it is attached
     })
 
@@ -22,6 +22,5 @@ function deleteTodoFromStorage(todoObject){
         if(todosStorage[i]._id == todoObject._id){
             todosStorage[i] = ''
         }
-        
     }
 }

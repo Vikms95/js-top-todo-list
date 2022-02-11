@@ -1,5 +1,6 @@
+import renderViewProject from "./renderViewProject"
 import renderViewTodo from "./renderViewTodo"
-import newTodoButtonEventListener from "../logic/createStaticElements"
+import newButtonEventListener from "../logic/createStaticElements"
 
 function loadStaticElementsView (){
     // Static containers
@@ -12,6 +13,7 @@ function loadStaticElementsView (){
     const navigationBarHeaderLine = document.createElement('hr')
     const navigationBarHeader2 = document.createElement('h2')
     const defaultProjectButton = document.createElement('button')
+    const newProjectButton = document.createElement('button')
     const newTodoButton = document.createElement('button')
     const todayTodosButton = document.createElement('button')
     const upcomingTodosButton = document.createElement('button')
@@ -26,6 +28,7 @@ function loadStaticElementsView (){
     navigationBar.appendChild(navigationBarHeaderLine)
     navigationBar.appendChild(navigationBarHeader2)
     navigationBar.appendChild(defaultProjectButton)
+    navigationBar.appendChild(newProjectButton)
     navigationBar.appendChild(newTodoButton)
     navigationBar.appendChild(todayTodosButton)
     navigationBar.appendChild(upcomingTodosButton)
@@ -37,6 +40,7 @@ function loadStaticElementsView (){
     navigationBarHeader2.classList.add('header2')
     dynamicContentContainer.id = 'dynamic-content'
     defaultProjectButton.classList.add('nav-button')
+    newProjectButton.classList.add('nav-button')
     newTodoButton.classList.add('nav-button')
     todayTodosButton.classList.add('nav-button')
     upcomingTodosButton.classList.add('nav-button')
@@ -45,12 +49,14 @@ function loadStaticElementsView (){
     navigationBarHeader1.textContent = 'Todo'
     navigationBarHeader2.textContent = 'App'
     defaultProjectButton.textContent = 'Home'
+    newProjectButton.textContent = 'New project'
     newTodoButton.textContent = 'New task'
     todayTodosButton.textContent = 'Today'
     upcomingTodosButton.textContent = 'Upcoming'
     
     //Add event listeners to static elements (imported from createStaticElements)
-    newTodoButtonEventListener(newTodoButton,renderViewTodo)
+    newButtonEventListener(newProjectButton,renderViewProject)
+    newButtonEventListener(newTodoButton,renderViewTodo)
 }
 
 export default loadStaticElementsView

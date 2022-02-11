@@ -7,14 +7,13 @@ function createStaticElements(){
 
 
 
-function newTodoButtonEventListener(element,fn){
+function newButtonEventListener(element,fn){
     element.addEventListener('click', () => {
         const container = document.getElementById('content')
         const element = fn()
-        container.appendChild(element)
-        
+        container.appendChild(element)    
     })
     
 }
 
-export default newTodoButtonEventListener
+export default newButtonEventListener
