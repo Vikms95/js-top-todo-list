@@ -1,8 +1,8 @@
-import projectsStorage from './objectsStorage'
+import {projectsStorage} from './objectsStorage'
 import { generateUniqueID } from './createTodoObject'
 
 const askForProjectInput = () => {
-        // let title = prompt('Enter title')
+    // let title = prompt('Enter title')
     // if(title === null) return
     // let todo = createTodoObject(title,dueDate,priority,description)
 

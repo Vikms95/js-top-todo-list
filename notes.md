@@ -52,8 +52,10 @@ PROJECT GENERAL SCHEMA:
     <!-- - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove) -->
     - Delete todo from the *project's array it's attached to(to do later)*
 
-- Create empty project object
-
+<!-- - Create empty project object -->
+<!-- - Initial styling project divs -->
+- Add event listener to project delete button
+- Attach todo to project:
 
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

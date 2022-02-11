@@ -40,7 +40,7 @@ const renderViewTodo = () =>{
     container.classList.add('faded-out')
 
     buttons.classList.add('todo')
-    buttons.classList.add('checkmark')
+    buttons.classList.add('buttons')
     todo.classList.add('todo')
     todo.classList.add('body')
     
