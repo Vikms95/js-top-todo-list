@@ -37,7 +37,7 @@ PROJECT GENERAL SCHEMA:
         -renderViewTodoFromProject(todos related to project but only title, duedate, color and ability to expand to see it's description)
         -renderViewUpcomningTodos (loads all todos for the following 15 days as due date)
 
-
+TODO
 <!-- - Show random todo on screen -->
 <!-- - Add static elements on nar bar upon page load -->
 <!-- - Make todos fit properly on dynamic content container:
@@ -54,11 +54,11 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Create empty project object -->
 <!-- - Initial styling project divs -->
-<!-- - Make project and todo id independent  -->
+<!-- - Make project and todo id independent 
     ! I was using the same function for todo imported within the projects modules
 
-- Add event listener to project delete button:
-    Not pushing projects into array?
+<!-- - Add event listener to project delete button > Projects being pushed, but not deleted: --> ! Was using todo event listener
+
 - Attach todo to project:
 
 - Look into date library

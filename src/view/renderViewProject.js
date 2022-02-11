@@ -1,5 +1,5 @@
 import askForProjectInput from "../logic/createProjectObject";
-import { addEventListenerTodoDeleteButton } from "../logic/deleteElements";
+import { addEventListenerProjectDeleteButton } from "../logic/deleteElements";
 
 const renderViewProject = () => {
   let dynamicElementsContainer = document.getElementById("dynamic-content");
@@ -52,7 +52,7 @@ const renderViewProject = () => {
   });
 
   // Add event listeners to buttons within the todo di
-  addEventListenerTodoDeleteButton(deleteButton, projectObject);
+  addEventListenerProjectDeleteButton(deleteButton, projectObject);
   // Return container to be appended in index.js
   return dynamicElementsContainer;
 };

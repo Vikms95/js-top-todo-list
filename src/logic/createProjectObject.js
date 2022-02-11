@@ -9,6 +9,7 @@ const askForProjectInput = () => {
 
   const project = createProjectObject("Test Project");
   projectsStorage.push(project);
+  console.log(projectsStorage.length)
   return project;
 };
 
