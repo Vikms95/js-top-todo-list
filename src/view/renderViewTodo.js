@@ -21,7 +21,6 @@ const renderViewTodo = () => {
   const description = document.createElement("div");
 
   // Append container to todoElementsContainer, container div > checkmark div, todo div
-  dynamicElementsContainer.appendChild(container);
   container.appendChild(buttons);
   container.appendChild(todo);
 
@@ -63,7 +62,6 @@ const renderViewTodo = () => {
 
   // Call for askForTodoInput and store the object returned
   const todoObject = askForTodoInput();
-  console.log(todoObject);
 
   // Change text content of divs depending on the property values from the object
   addTodoToProjectButton.textContent = '>'
@@ -78,6 +76,10 @@ const renderViewTodo = () => {
   // Add event listeners to buttons within the todo div
   addEventListenerTodoDeleteButton(deleteButton, todoObject);
   addEventListenerTodoAddToProject(addTodoToProjectButton,todoObject)
+
+  // Append container last to avoid empty container created
+  dynamicElementsContainer.appendChild(container);
+
   // Return container to be appended in index.js
   return dynamicElementsContainer;
 };
