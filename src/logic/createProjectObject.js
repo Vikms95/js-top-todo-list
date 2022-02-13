@@ -15,12 +15,14 @@ const askForProjectInput = () => {
 };
 
 const createProjectObject = (title) => {
-  let _id = generateProjectUniqueID(); 
+  const _id = generateProjectUniqueID();
+  let isDefault = false 
   let _attachedProjectTodos = []; // Will store ID, then get compared with todosStorage, will be private
 
   return {
     _id,
     title,
+    isDefault,
     _attachedProjectTodos,
   };
 };

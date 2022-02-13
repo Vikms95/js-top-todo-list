@@ -34,9 +34,9 @@ const createTodoObject = (
   priority,
   description
 ) => {
-  let _id = generateTodoUniqueID(); // It will be end up private, public for now
-  let notes;
+  const _id = generateTodoUniqueID(); // It will be end up private, public for now
   let dueDate = format(new Date(dueYear, dueMonth, dueDay), "PPPP");
+  let projectTitleItBelongs = ''
   let checkmark = false;
 
   return {
@@ -45,7 +45,7 @@ const createTodoObject = (
     dueDate,
     priority,
     description,
-    notes,
+    projectTitleItBelongs,
     checkmark,
   };
 };
