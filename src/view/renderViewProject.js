@@ -42,9 +42,7 @@ const renderViewProject = () => {
   
   // Call for askForProjectInput and store the object returned
   const projectObject = askForProjectInput();
-  console.log(projectObject)
-  if(projectObject === null) return;
-  console.log(projectObject);
+  if(projectObject === null) return null;
 
   // Change text content of divs depending on the property values from the object
   deleteButton.textContent = "X";

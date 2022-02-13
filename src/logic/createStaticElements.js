@@ -9,7 +9,7 @@ function newButtonEventListener(element, functionToUse) {
   element.addEventListener("click", () => {
     const container = document.getElementById("content");
     const element = functionToUse();
-    if(element === null) return;
+    if(element === null || element === undefined) return;
     container.appendChild(element);
   });
 }

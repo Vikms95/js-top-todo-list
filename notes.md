@@ -62,7 +62,7 @@ TODO
 
 <!-- - Attach todo to project -->
 <!-- - Make the project input to insert todo case insensitive   -->
-- Make projects imposible to have same title, return a value to know the rendering has to be canceled
+- Make projects imposible to have same title, return a value to know the rendering has to be canceled:
 
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

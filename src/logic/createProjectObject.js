@@ -2,14 +2,15 @@ import { projectsStorage } from "./objectsStorage";
 
 const askForProjectInput = () => {
   let title = prompt('Enter title')
-  console.log(title)
-  if(title === null) return null;
+  if(!isProjectTitleValid(title)){
+    return null;
+  }  
 
   // REAL CODE ^ TEST CODE V
 
   const project = createProjectObject(title);
+
   projectsStorage.push(project);
-  console.log(projectsStorage)
   return project;
 };
 
@@ -32,4 +33,18 @@ const generateProjectUniqueID = (function () {
       return id++;
     };
   })();
+
+const isProjectTitleValid = (title) =>{
+  // Check if user has finished the alert via cancel button
+  if(title === null) return false;
+
+  //Check if title exist within the project's array
+  for (let i = 0; i < projectsStorage.length; i++) {
+    if(title === projectsStorage[i].title.toLowerCase()){
+      alert('Project already exists! Please pick another title.')
+      return false;
+    }
+  }
+  return true;
+}
   
