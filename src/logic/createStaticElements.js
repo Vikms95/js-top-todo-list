@@ -5,12 +5,14 @@ function createStaticElements() {
   // Create filter upcoming todos button function
 }
 
-function newButtonEventListener(element, fn) {
+function newButtonEventListener(element, functionToUse) {
   element.addEventListener("click", () => {
     const container = document.getElementById("content");
-    const element = fn();
+    const element = functionToUse();
+    if(element === null) return;
     container.appendChild(element);
   });
 }
 
 export default newButtonEventListener;
+

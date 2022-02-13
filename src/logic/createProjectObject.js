@@ -1,20 +1,20 @@
 import { projectsStorage } from "./objectsStorage";
 
 const askForProjectInput = () => {
-  // let title = prompt('Enter title')
-  // if(title === null) return
-  // let todo = createTodoObject(title,dueDate,priority,description)
+  let title = prompt('Enter title')
+  console.log(title)
+  if(title === null) return null;
 
   // REAL CODE ^ TEST CODE V
 
-  const project = createProjectObject("Test Project");
+  const project = createProjectObject(title);
   projectsStorage.push(project);
-  console.log(projectsStorage.length)
+  console.log(projectsStorage)
   return project;
 };
 
 const createProjectObject = (title) => {
-  let _id = generateProjectUniqueID(); // Will this be separate from todo increments?
+  let _id = generateProjectUniqueID(); 
   let _attachedProjectTodos = []; // Will store ID, then get compared with todosStorage, will be private
 
   return {

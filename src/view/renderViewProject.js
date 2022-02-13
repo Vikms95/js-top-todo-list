@@ -14,8 +14,8 @@ const renderViewProject = () => {
   const todoListContainer = document.createElement("div");
   const todoList = document.createElement("ol"); // Will try using <ol> and <li>
 
-  // Append container to todoElementsContainer, container div > checkmark div, todo div
-  dynamicElementsContainer.appendChild(container);
+  // Append container div > checkmark div, todo div
+  
   container.appendChild(buttons);
   container.appendChild(project);
   project.appendChild(title);
@@ -40,9 +40,10 @@ const renderViewProject = () => {
     container.classList.remove("faded-out");
   });
   
-
   // Call for askForProjectInput and store the object returned
   const projectObject = askForProjectInput();
+  console.log(projectObject)
+  if(projectObject === null) return;
   console.log(projectObject);
 
   // Change text content of divs depending on the property values from the object
@@ -55,6 +56,9 @@ const renderViewProject = () => {
 
   // Add event listeners to buttons within the todo di
   addEventListenerProjectDeleteButton(deleteButton, projectObject);
+  
+  // Container is appended last to avoid returning an empty container if the object is null..
+  dynamicElementsContainer.appendChild(container);
   // Return container to be appended in index.js
   return dynamicElementsContainer;
 };
