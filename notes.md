@@ -38,7 +38,6 @@ PROJECT GENERAL SCHEMA:
         -renderViewTodoFromProject(todos related to project but only title, duedate, color and ability to expand to see it's description)
         -renderViewUpcomningTodos (loads all todos for the following 15 days as due date)
 
-TODO
 <!-- - Show random todo on screen -->
 <!-- - Add static elements on nar bar upon page load -->
 <!-- - Make todos fit properly on dynamic content container:
@@ -47,22 +46,25 @@ TODO
 
 <!-- - Make todo fit the whole width of the screen -->
 <!-- - Make description and border not overflow when page is shrinked -->
- - Remove a todo:
-    <!-- - Add event listener for the checkmark div -->
-    <!-- - Delete the todo both from display -->
-    <!-- - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove) -->
-    - Delete todo from the *project's array it's attached to(to do later)*
+
+ <!-- - Remove a todo:
+<!-- - Add event listener for the checkmark div -->
+<!-- - Delete the todo both from display -->
+<!-- - Delete from todo array: created a function to generate an uniqueID (createtodoObject line 39) and compared to todosStorage index, then change the content to empty (not remove) -->
+<!-- - Delete todo from the *project's array it's attached to(to do later)* -->
 
 <!-- - Create empty project object -->
 <!-- - Initial styling project divs -->
 <!-- - Make project and todo id independent 
     ! I was using the same function for todo imported within the projects modules
 
-<!-- - Add event listener to project delete button > Projects being pushed, but not deleted: --> ! Was using todo event listener
+<!-- - Add event listener to project delete button > Projects being pushed, but not deleted: --> 
+    ! Was using todo event listener
 
-<!-- - Attach todo to project -->
-<!-- - Make the project input to insert todo case insensitive   -->
+<!-- - Attach todo to project from todo -->
+- Make the project input to insert todo case insensitive  
 <!-- - Make projects imposible to have same title, return a value to know the rendering has to be canceled: -->
-
+    - Attach todo to project from project
+- Do not let a todo be on more than one project
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

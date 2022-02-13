@@ -50,6 +50,7 @@ const createTodoObject = (
   };
 };
 
+//TODO Convert to prototype method?
 const generateTodoUniqueID = (function () {
   let id = 0;
   return function () {
