@@ -67,6 +67,7 @@ PROJECT GENERAL SCHEMA:
 <!-- - Attach todo to project from project:
     storing todos but showing alert that todo does not exist -->
     ! Was not returning when the loop was finished
-- Do not let a todo be on more than one project
+- Do not let a todo be on more than one project: if todo projectTitleItBelongs is not '', quit
+- Call the function that removes array of todos from project and sets projectItBelongsTo = ''
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

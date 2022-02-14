@@ -34,21 +34,17 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
  
         for (let i = 0; i < todosStorage.length; i++) {
             if(todoTitleToInsert === todosStorage[i].title){
-                for (let j = 0; j < projectObject._attachedProjectTodos.length; j++) {
-                    if(todoTitleToInsert === projectObject._attachedProjectTodos[j].title){
-                        alert('Todo with the same title is already assigned to this project!')
-                        return
-                    }
+                if(todosStorage[i].projectTitleItBelongs === ''){
+                    projectObject._attachedProjectTodos.push(todosStorage[i])
+                    todosStorage[i].projectTitleItBelongs = projectObject.title
+                    return
+                }else{
+                    alert('Task already assigned to another project or does not exist.')
+                    return
                 }
-                projectObject._attachedProjectTodos.push(todosStorage[i])
-                todosStorage[i].projectTitleItBelongs = projectObject.title
-                return
-            
-            }else{
-                alert('Task does not exist. Make sure the title is well written or create the task')
-                return
             }
         }
+        alert('Task does not exist. Please make sure the name is well written.')
     })
 }
 export {addEventListenerTodoAddToProject,addEventListenerTodoAddToProjectFromProject}
