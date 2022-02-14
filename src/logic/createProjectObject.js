@@ -40,13 +40,10 @@ const isProjectTitleValid = (title) =>{
     // Check if user has finished the alert via cancel button
     if(title === null) return false
 
-    //Check if title exist within the project's array
-    //TODO Refactor array method?
-    for (let i = 0; i < projectsStorage.length; i++) {
-        if(title === projectsStorage[i].title){
-            alert('Project already exists! Please pick another title.')
-            return false
-        }
+    const projectExist = projectsStorage.some(el => el.title === title)
+    if(projectExist){
+        alert('Project already exists! Please pick another title.')
+        return false
     }
     return true
 }

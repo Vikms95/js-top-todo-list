@@ -40,7 +40,7 @@ const createTodoObject = (
     let dueDate = format(new Date(dueYear, dueMonth, dueDay), 'PPPP')
     let projectTitleItBelongs = ''
     let checkmark = false
-
+    
     return {
         _id,
         title,
