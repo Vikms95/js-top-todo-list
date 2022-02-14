@@ -64,8 +64,9 @@ PROJECT GENERAL SCHEMA:
 <!-- - Attach todo to project from todo -->
 - Make the project input to insert todo case insensitive  
 <!-- - Make projects imposible to have same title, return a value to know the rendering has to be canceled: -->
-- Attach todo to project from project:
-    loop inside if statement seems to not work
+<!-- - Attach todo to project from project:
+    storing todos but showing alert that todo does not exist -->
+    ! Was not returning when the loop was finished
 - Do not let a todo be on more than one project
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/
