@@ -8,10 +8,11 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
     
         // Call the function that removes todo from general todo array
         deleteElementFromStorageArray(todoObject, todosStorage)
-
+        
+        //TODO Refactor and use array method
         // Find which project it belong to by checking projectTitleItBelongs
         for (let i = 0; i < projectsStorage.length; i++) {
-            //TODO Use array method instead of nested for loop
+            
             if (projectsStorage[i].title === todoObject.projectTitleItBelongs) {
                 // Find todo id inside project's array
                 for (let j = 0; j < projectsStorage._attachedProjectTodos.length; j++) {
@@ -29,10 +30,11 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
 
 function addEventListenerProjectDeleteButton(element, projectObject) {
     element.addEventListener('click', () => {
-        for (let i = 0; i < projectObject._attachedProjectTodos.length; i++) {
-            projectObject._attachedProjectTodos[i].projectTitleItBelongs = ''
-            console.log(projectObject._attachedProjectTodos)
-        }
+        
+        // Let todos know that they do not belong to any project anymore
+        projectObject._attachedProjectTodos = projectObject._attachedProjectTodos
+            .map(todo => todo.projectTitleItBelongs = '')
+
         // Call the function that removes project from display (deleting child element)
         element.parentNode.parentNode.remove()
 

@@ -37,6 +37,7 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
                 if(todosStorage[i].projectTitleItBelongs === ''){
                     projectObject._attachedProjectTodos.push(todosStorage[i])
                     todosStorage[i].projectTitleItBelongs = projectObject.title
+                    console.log(todosStorage[i].projectTitleItBelongs)
                     return
                 }else{
                     alert('Task already assigned to another project or does not exist.')
