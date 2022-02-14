@@ -1,4 +1,8 @@
-let todosStorage = [];
-let projectsStorage = [];
+let todosStorage = []
 
-export { todosStorage, projectsStorage };
+let projectsStorage = []
+
+
+
+export { todosStorage, projectsStorage }
+
