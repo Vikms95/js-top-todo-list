@@ -3,7 +3,7 @@ import { todosStorage, projectsStorage } from './objectsStorage'
 function addEventListenerTodoAddToProject (element,todoObject){
     element.addEventListener('click', () =>{      
         if(!(todoObject.projectTitleItBelongs)){
-            addTodoToProject(todoObject)
+            addTodoToProjectFromTodo(todoObject)
         }else{
             alert('Task already assigned to a project.')
             return
@@ -13,29 +13,15 @@ function addEventListenerTodoAddToProject (element,todoObject){
 
 function addEventListenerTodoAddToProjectFromProject (element,projectObject){
     element.addEventListener('click', () =>{
-        //TODO Refactor and use array methods
         const todoTitleToInsert = prompt('Insert the todo title that you want to add to this project')
         if(todoTitleToInsert === null){return}
- 
-        for (let i = 0; i < todosStorage.length; i++) {
-            if(todoTitleToInsert === todosStorage[i].title){
-                if(todosStorage[i].projectTitleItBelongs === ''){
-                    projectObject._attachedProjectTodos.push(todosStorage[i])
-                    todosStorage[i].projectTitleItBelongs = projectObject.title
-                    console.log(todosStorage[i].projectTitleItBelongs)
-                    return
-                }else{
-                    alert('Task already assigned to a project or does not exist.')
-                    return
-                }
-            }
-        }
-        alert('Task does not exist. Please make sure the name is well written.')
+        addTodoToProjectFromProject(projectObject,todoTitleToInsert)
     })
 }
+
 export {addEventListenerTodoAddToProject,addEventListenerTodoAddToProjectFromProject}
 
-const addTodoToProject = (todoObject) =>{
+const addTodoToProjectFromTodo = (todoObject) =>{
 
     const projectTitleToInsert = prompt('Insert the project title where this task should be added to ') 
     if(projectTitleToInsert === null) return 
@@ -50,5 +36,18 @@ const addTodoToProject = (todoObject) =>{
     }else{
         alert('Project does not exist. Make sure the title is well written or create the project.')
         return 
+    }
+}
+
+const addTodoToProjectFromProject = (projectObject,todoTitleToInsert) =>{
+    const todoToAddProject = todosStorage
+        .find(todo => todo.title === todoTitleToInsert)
+
+    if(todoToAddProject && (!(todoToAddProject.projectTitleItBelongs))){
+        projectObject._attachedProjectTodos.push(todoToAddProject)
+        todoToAddProject.projectTitleItBelongs = projectObject.title
+    }else{
+        alert('Task already assigned to a project or does not exist.')
+        return
     }
 }
