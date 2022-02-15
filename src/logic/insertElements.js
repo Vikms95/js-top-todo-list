@@ -1,34 +1,26 @@
 import { todosStorage, projectsStorage } from './objectsStorage'
 
 function addEventListenerTodoAddToProject (element,todoObject){
-    // Add event listener to add button
     element.addEventListener('click', () =>{      
-        //TODO Refactor and use array methods
-        // Pop alert where the user will introduce the project title
-        const projectTitleToInsert = prompt('Insert the project title where this task should be added to ') 
-        if(projectTitleToInsert === null){return}
+        if(!(todoObject.projectTitleItBelongs)){
+            const projectTitleToInsert = prompt('Insert the project title where this task should be added to ') 
+            if(projectTitleToInsert === null){return}
 
-        // Iterate projectsStorageand check if project title exist
-        for (let i = 0; i < projectsStorage.length; i++) {
-            if(projectsStorage[i].title === projectTitleToInsert){
-                if(!(todoObject.projectTitleItBelongs)){
-                    // If project title exist, add todo object to the project's array of todos
-                    projectsStorage[i]._attachedProjectTodos.push(todoObject)
-            
-                    // Change the todo's projectTitleItBelongs property to the project name
-                    todoObject.projectTitleItBelongs = projectsStorage[i].title
-                    return
-                }else{
-
-                    alert('Task already assigned to a project or does not exist.')
-                    return  
-                }
-            }  
+            //Find if project exist, if it does, store it
+            const projectToAddTodo = projectsStorage
+                .find(project => project.title === projectTitleToInsert)
+                
+            if(projectToAddTodo){
+                projectToAddTodo._attachedProjectTodos.push(todoObject)
+                todoObject.projectTitleItBelongs = projectTitleToInsert
+            }else{
+                alert('Project does not exist. Make sure the title is well written or create the project.')
+                return
+            }
+        }else{
+            alert('Task already assigned to a project.')
+            return
         }
-        // If loop finished without a found candidate,
-        //  prompt that the project does not exist and to check the spelling
-        alert('Project does not exist. Make sure the title is well written or create the project.')
-        return
     })
 }
 
