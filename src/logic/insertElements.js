@@ -4,13 +4,14 @@ function addEventListenerTodoAddToProject (element,todoObject){
     // Add event listener to add button
     element.addEventListener('click', () =>{      
         //TODO Refactor and use array methods
+        //TODO Todo can go into two projects at once from here
         // Pop alert where the user will introduce the project title
         const projectTitleToInsert = prompt('Insert the project title where this task should be added to ') 
         if(projectTitleToInsert === null){return}
 
         // Iterate projectsStorageand check if project title exist
         for (let i = 0; i < projectsStorage.length; i++) {
-            if(projectsStorage[i].title.toLowerCase() === projectTitleToInsert.toLowerCase()){
+            if(projectsStorage[i].title === projectTitleToInsert){
                 // If project title exist, add todo object to the project's array of todos
                 projectsStorage[i]._attachedProjectTodos.push(todoObject)
           
@@ -40,7 +41,7 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
                     console.log(todosStorage[i].projectTitleItBelongs)
                     return
                 }else{
-                    alert('Task already assigned to another project or does not exist.')
+                    alert('Task already assigned to a project or does not exist.')
                     return
                 }
             }

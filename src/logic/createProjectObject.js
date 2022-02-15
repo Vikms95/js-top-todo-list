@@ -11,6 +11,7 @@ const askForProjectInput = () => {
     const project = createProjectObject(title)
 
     projectsStorage.push(project)
+    console.log(projectsStorage)
     return project
 }
 
