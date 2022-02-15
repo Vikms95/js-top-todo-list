@@ -3,47 +3,15 @@ import { todosStorage, projectsStorage } from './objectsStorage'
 // This function is called whenever a todo is shown on display
 function addEventListenerTodoDeleteButton(element, todoObject) {
     element.addEventListener('click', () => {
-        //TODO Refactor and use array method
-        // Find which project it belong to by checking projectTitleItBelongs, and stores the object info
-        const projectToRemoveTodo = projectsStorage
-            .find(project => project.title === todoObject.projectTitleItBelongs) 
 
-        //TODO ON WORK
-        //Remove todo from project's array
-        projectToRemoveTodo._attachedProjectTodos
-            .map(todo => {
-                if(todo._id === todoObject._id){
-                    todo = ''
-                }
-            })
+        deleteTodoFromProjectArray(todoObject)
 
-        console.log(projectToRemoveTodo._attachedProjectTodos)
-
-    
-        //TODO Find todo id inside todo's array
-
-
-        // let todoToDelete = projectItBelongs._attachedProjectTodos
-        //     .find(todo => todo._id === todoObject._id)
-        
-        // Delete todo's projectItBelongsProperty
-
-        
-
-        // for (let j = 0; j < projectsStorage._attachedProjectTodos.length; j++) {
-            
-        //     if(projectsStorage._attachedProjectTodos[j]._id === todoObject._id){
-                
-        //         // If found, make that index = ""
-        //         projectsStorage._attachedProjectTodos[j] = ''
-        //         todoObject.projectTitleItBelongs = ''
-        //     }
-        // }
+        // Remove the property that attaches the todo to the project
+        todoObject.projectTitleItBelongs = '' 
 
         // Call the function that removes todo from display (deleting child element)
         element.parentNode.parentNode.remove()
     
-        // Call the function that removes todo from general todo array
         deleteElementFromStorageArray(todoObject, todosStorage)
         
     })
@@ -69,11 +37,28 @@ export {
     addEventListenerProjectDeleteButton,
 }
 
-function deleteElementFromStorageArray(object, array) {
+const deleteElementFromStorageArray = (object, array) => {
     for (let i = 0; i < array.length; i++) {
         if (array[i]._id === object._id) {
             array[i] = ''
         }
     }
 }
+
+const deleteTodoFromProjectArray = (todoObject) =>{
+  
+    // Find which project it belong to by checking projectTitleItBelongs, and stores the object info
+    const projectToRemoveTodo = projectsStorage
+        .find(project => project.title === todoObject.projectTitleItBelongs)
+
+    //Look for the todo in the project's array change it's index into an empty string
+    for (let i = 0; i < projectToRemoveTodo._attachedProjectTodos.length; i++) {
+        if(projectToRemoveTodo._attachedProjectTodos[i]._id === todoObject._id){
+            projectToRemoveTodo._attachedProjectTodos[i] = ''
+        }
+    }
+
+}
+
+
 
