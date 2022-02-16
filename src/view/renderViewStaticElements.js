@@ -36,88 +36,91 @@ function loadStaticElementsView() {
     
     const defaultProjectButton = document.createElement('button')
     
-    const newProjectButton = document.createElement('button')
-
-    const newTodoButton = document.createElement('button')
-
     const todayTodosButton = document.createElement('button')
 
     const upcomingTodosButton = document.createElement('button')
 
+    const endButtonsLine = document.createElement('hr')
+
+    const newProjectButton = document.createElement('button')
+
+    const newTodoButton = document.createElement('button')
+
+
+
     //Static elements on the dynamic content container
-    dynamicContentStaticButtons.appendChild(newProjectButton)
     
-    dynamicContentStaticButtons.appendChild(newTodoButton)
-
     //Appendings
-
+    
     contentReference.appendChild(navigationBar)
-
+    
     contentReference.appendChild(dynamicContentContainer)
     
     contentReference.appendChild(dynamicContentStaticButtons)
-
+    
     navigationBar.appendChild(navigationBarHeader1)
-
+    
     navigationBar.appendChild(navigationBarHeaderLine)
-
+    
     navigationBar.appendChild(navigationBarHeader2)
+
 
     navigationBar.appendChild(generalProjectButton)
 
     navigationBar.appendChild(defaultProjectButton)
-
-
+    
     navigationBar.appendChild(todayTodosButton)
     
     navigationBar.appendChild(upcomingTodosButton)
+
+    navigationBar.appendChild(endButtonsLine)
     
-
-
+    navigationBar.appendChild(newProjectButton)
+    
+    navigationBar.appendChild(newTodoButton)
+    
+    
     //Class assignments
-
+    
     navigationBar.classList.add('nav-bar')
-
+    
     navigationBarHeader1.classList.add('header1')
-
+    
     navigationBarHeaderLine.classList.add('header-line')
 
     navigationBarHeader2.classList.add('header2')
 
     dynamicContentContainer.id = 'dynamic-content'
 
-    dynamicContentStaticButtons.classList.add('dynamic-button')
-
     generalProjectButton.classList.add('nav-button')
 
     defaultProjectButton.classList.add('nav-button')
-
-    newProjectButton.classList.add('dynamic-button')
 
     todayTodosButton.classList.add('nav-button')
 
     upcomingTodosButton.classList.add('nav-button')
 
-    newTodoButton.classList.add('dynamic-button')
-
+    newProjectButton.classList.add('nav-button')
     
+    newTodoButton.classList.add('nav-button')
+
     //Property changes
 
     navigationBarHeader1.textContent = 'Todo'
 
     navigationBarHeader2.textContent = 'App'
 
-    generalProjectButton.textContent = 'Home'
+    generalProjectButton.innerHTML = '<i class="fa fa-home"></i>  Home'
 
-    defaultProjectButton.textContent = 'Working on...'
+    defaultProjectButton.innerHTML = '<i class="fa fa-hourglass"></i> Working on...'
 
-    newProjectButton.textContent = 'New project'
+    newProjectButton.innerHTML = '<i class="fa-solid fa-list-check"></i> New project'
 
-    newTodoButton.textContent = 'New task'
+    newTodoButton.innerHTML = '<i class="fa-solid fa-check"></i> New task'
 
-    todayTodosButton.textContent = 'Today'
+    todayTodosButton.innerHTML = '<i class="fa-solid fa-cloud-sun"></i> Today'
 
-    upcomingTodosButton.textContent = 'Upcoming'
+    upcomingTodosButton.innerHTML = '<i class="fa-solid fa-calendar-days"></i> Upcoming'
 
 
 
