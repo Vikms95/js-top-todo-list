@@ -1,6 +1,8 @@
-import askForProjectInput from '../logic/createProjectObject'
+import {askForProjectInput} from '../logic/createProjectObject'
 import { addEventListenerProjectDeleteButton } from '../logic/deleteElements'
 import { addEventListenerTodoAddToProjectFromProject } from '../logic/insertElements'
+import { addEventListenerToogleDefaultStateButton } from '../logic/modifyElements'
+
 const renderViewProject = () => {
     let dynamicElementsContainer = document.getElementById('dynamic-content')
 
@@ -9,6 +11,7 @@ const renderViewProject = () => {
     const buttons = document.createElement('div')
     const deleteButton = document.createElement('button')
     const addTodoToProjectButton = document.createElement('button')
+    const toggleDefaultStateButton = document.createElement('button')
     const project = document.createElement('div')
 
     // Create divs within project div
@@ -26,6 +29,7 @@ const renderViewProject = () => {
     // Appends buttons to buttons container
     buttons.appendChild(addTodoToProjectButton)
     buttons.appendChild(deleteButton)
+    buttons.appendChild(toggleDefaultStateButton)
 
     // Change div id/class
     container.classList.add('project-container')
@@ -49,6 +53,7 @@ const renderViewProject = () => {
     // Change text content of divs depending on the property values from the object
     addTodoToProjectButton.textContent = '>'
     deleteButton.textContent = 'X'
+    toggleDefaultStateButton.textContent = 'D'
     title.textContent = projectObject.title
 
     // Change title bg depending on property value 'priority'
@@ -57,7 +62,8 @@ const renderViewProject = () => {
 
     // Add event listeners to buttons within the todo di
     addEventListenerProjectDeleteButton(deleteButton, projectObject)
-    addEventListenerTodoAddToProjectFromProject(addTodoToProjectButton,projectObject)  
+    addEventListenerTodoAddToProjectFromProject(addTodoToProjectButton,projectObject)
+    addEventListenerToogleDefaultStateButton(toggleDefaultStateButton,projectObject)  
 
     // Container is appended last to avoid returning an empty container if the object is null..
     dynamicElementsContainer.appendChild(container)

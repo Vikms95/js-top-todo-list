@@ -70,7 +70,12 @@ PROJECT GENERAL SCHEMA:
 <!-- - Do not let a todo be on more than one project: if todo projectTitleItBelongs is not '', quit -->
 <!-- - Call the function that removes array of todos from project and sets projectTitleItBelongs = '' -->
 
-- WORK ON REFACTORING FOR LOOPS INSERT ELEMENTS
+<!-- - Create button that sets a project as default and disables it's default state if clicked again -->
+
+- Cancel task alert gives error
+
+- Create view of default project
+
 - Append to the projecs todo-list-container it's todo with the   reduced views (renderViewTodoFromProject)
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

@@ -19,7 +19,7 @@ const createProjectObject = (title) => {
     const _id = generateProjectUniqueID()
     let isDefault = false 
     let _attachedProjectTodos = [] // Will store ID, then get compared with todosStorage, will be private
-
+    
     return {
         _id,
         title,
@@ -28,7 +28,8 @@ const createProjectObject = (title) => {
     }
 }
 
-export default askForProjectInput
+export {askForProjectInput}
+
 
 const generateProjectUniqueID = (function () {
     let id = 0
@@ -41,11 +42,14 @@ const isProjectTitleValid = (title) =>{
     // Check if user has finished the alert via cancel button
     if(title === null) return false
 
-    const projectExist = projectsStorage.some(el => el.title === title)
+    const projectExist = projectsStorage
+        .some(project => project.title === title)
+
     if(projectExist){
         alert('Project already exists! Please pick another title.')
         return false
     }
     return true
 }
-  
+
+
