@@ -20,6 +20,8 @@ function loadStaticElementsView() {
 
     const dynamicContentContainer = document.createElement('div')
 
+    const dynamicContentStaticButtons = document.createElement('div')
+
 
 
     //Static elements on the navigation bar
@@ -31,9 +33,9 @@ function loadStaticElementsView() {
     const navigationBarHeader2 = document.createElement('h2')
 
     const generalProjectButton = document.createElement('button')
-
+    
     const defaultProjectButton = document.createElement('button')
-
+    
     const newProjectButton = document.createElement('button')
 
     const newTodoButton = document.createElement('button')
@@ -43,16 +45,17 @@ function loadStaticElementsView() {
     const upcomingTodosButton = document.createElement('button')
 
     //Static elements on the dynamic content container
-
-    //
-
-
+    dynamicContentStaticButtons.appendChild(newProjectButton)
+    
+    dynamicContentStaticButtons.appendChild(newTodoButton)
 
     //Appendings
 
     contentReference.appendChild(navigationBar)
 
     contentReference.appendChild(dynamicContentContainer)
+    
+    contentReference.appendChild(dynamicContentStaticButtons)
 
     navigationBar.appendChild(navigationBarHeader1)
 
@@ -64,14 +67,11 @@ function loadStaticElementsView() {
 
     navigationBar.appendChild(defaultProjectButton)
 
-    navigationBar.appendChild(newProjectButton)
-
-    navigationBar.appendChild(newTodoButton)
 
     navigationBar.appendChild(todayTodosButton)
-
+    
     navigationBar.appendChild(upcomingTodosButton)
-
+    
 
 
     //Class assignments
@@ -86,20 +86,21 @@ function loadStaticElementsView() {
 
     dynamicContentContainer.id = 'dynamic-content'
 
+    dynamicContentStaticButtons.classList.add('dynamic-button')
+
     generalProjectButton.classList.add('nav-button')
 
     defaultProjectButton.classList.add('nav-button')
 
-    newProjectButton.classList.add('nav-button')
-
-    newTodoButton.classList.add('nav-button')
+    newProjectButton.classList.add('dynamic-button')
 
     todayTodosButton.classList.add('nav-button')
 
     upcomingTodosButton.classList.add('nav-button')
 
+    newTodoButton.classList.add('dynamic-button')
 
-
+    
     //Property changes
 
     navigationBarHeader1.textContent = 'Todo'
@@ -117,6 +118,7 @@ function loadStaticElementsView() {
     todayTodosButton.textContent = 'Today'
 
     upcomingTodosButton.textContent = 'Upcoming'
+
 
 
 

@@ -159,3 +159,17 @@ hr{
     width: 100%;
     flex: 1 0 200px;
 }
+
+.dynamic-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+button.dynamic-button{
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+}
