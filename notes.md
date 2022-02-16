@@ -72,7 +72,7 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Create button that sets a project as default and disables it's default state if clicked again -->
 
-- Cancel task alert gives error
+<!-- - Cancel task alert gives error -->
 
 - Create view of default project
 

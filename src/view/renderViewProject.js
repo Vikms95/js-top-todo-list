@@ -3,8 +3,12 @@ import { addEventListenerProjectDeleteButton } from '../logic/deleteElements'
 import { addEventListenerTodoAddToProjectFromProject } from '../logic/insertElements'
 import { addEventListenerToogleDefaultStateButton } from '../logic/modifyElements'
 
-const renderViewProject = () => {
+const renderViewProject = (projectAsParameter) => {
     let dynamicElementsContainer = document.getElementById('dynamic-content')
+    
+    // Call for askForProjectInput and store the object returned
+    const projectObject =  projectAsParameter || askForProjectInput()
+    if(projectObject === null || projectObject === undefined) return null
 
     // Create container div(row), checkmark div (column), project div (column)
     const container = document.createElement('div')
@@ -46,9 +50,6 @@ const renderViewProject = () => {
         container.classList.remove('faded-out')
     })
   
-    // Call for askForProjectInput and store the object returned
-    const projectObject = askForProjectInput()
-    if(projectObject === null) return null
 
     // Change text content of divs depending on the property values from the object
     addTodoToProjectButton.textContent = '>'
@@ -72,4 +73,4 @@ const renderViewProject = () => {
     return dynamicElementsContainer
 }
 
-export default renderViewProject
+export {renderViewProject}

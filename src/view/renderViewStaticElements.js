@@ -1,4 +1,6 @@
-import renderViewProject from './renderViewProject'
+import {renderViewProject} from './renderViewProject'
+
+import { renderViewDefaultProject } from './renderViewDefaultProject'
 
 import renderViewTodo from './renderViewTodo'
 
@@ -109,6 +111,8 @@ function loadStaticElementsView() {
 
 
     //Add event listeners to static elements (imported from createStaticElements)
+
+    newButtonEventListener(defaultProjectButton,renderViewDefaultProject)
 
     newButtonEventListener(newProjectButton, renderViewProject)
 
