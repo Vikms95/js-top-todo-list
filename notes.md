@@ -74,7 +74,9 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Cancel task alert gives error -->
 
-- Create view of default project
+<!-- - Create view of default project -->
+
+- Create view general projects
 
 - Append to the projecs todo-list-container it's todo with the   reduced views (renderViewTodoFromProject)
 - Look into date library

@@ -2,6 +2,8 @@ import {renderViewProject} from './renderViewProject'
 
 import { renderViewDefaultProject } from './renderViewDefaultProject'
 
+import { renderViewGeneralProject } from './renderViewGeneralProjects'
+
 import renderViewTodo from './renderViewTodo'
 
 import newButtonEventListener from '../logic/createStaticElements'
@@ -27,6 +29,8 @@ function loadStaticElementsView() {
     const navigationBarHeaderLine = document.createElement('hr')
 
     const navigationBarHeader2 = document.createElement('h2')
+
+    const generalProjectButton = document.createElement('button')
 
     const defaultProjectButton = document.createElement('button')
 
@@ -56,6 +60,8 @@ function loadStaticElementsView() {
 
     navigationBar.appendChild(navigationBarHeader2)
 
+    navigationBar.appendChild(generalProjectButton)
+
     navigationBar.appendChild(defaultProjectButton)
 
     navigationBar.appendChild(newProjectButton)
@@ -80,6 +86,8 @@ function loadStaticElementsView() {
 
     dynamicContentContainer.id = 'dynamic-content'
 
+    generalProjectButton.classList.add('nav-button')
+
     defaultProjectButton.classList.add('nav-button')
 
     newProjectButton.classList.add('nav-button')
@@ -98,7 +106,9 @@ function loadStaticElementsView() {
 
     navigationBarHeader2.textContent = 'App'
 
-    defaultProjectButton.textContent = 'Home'
+    generalProjectButton.textContent = 'Home'
+
+    defaultProjectButton.textContent = 'Working on...'
 
     newProjectButton.textContent = 'New project'
 
@@ -111,6 +121,8 @@ function loadStaticElementsView() {
 
 
     //Add event listeners to static elements (imported from createStaticElements)
+
+    newButtonEventListener(generalProjectButton,renderViewGeneralProject)
 
     newButtonEventListener(defaultProjectButton,renderViewDefaultProject)
 
