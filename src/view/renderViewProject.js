@@ -1,4 +1,5 @@
 import {askForProjectInput} from '../logic/createProjectObject'
+import renderViewTodoFromProject from './renderViewTodoFromProject'
 import { addEventListenerProjectDeleteButton } from '../logic/deleteElements'
 import { addEventListenerTodoAddToProjectFromProject } from '../logic/insertElements'
 import { addEventListenerToogleDefaultStateButton } from '../logic/modifyElements'
@@ -34,6 +35,15 @@ const renderViewProject = (projectAsParameter) => {
     buttons.appendChild(addTodoToProjectButton)
     buttons.appendChild(deleteButton)
     buttons.appendChild(toggleDefaultStateButton)
+
+    // Appends todos inside the projects ordered list
+    if(projectObject._attachedProjectTodos.length > 0){
+        projectObject._attachedProjectTodos.forEach(todo => {
+            if(!(Object.keys(todo).length === 0)){
+                todoList.appendChild(renderViewTodoFromProject(todo))
+            }
+        })
+    }
 
     // Change div id/class
     container.classList.add('project-container')

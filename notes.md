@@ -76,8 +76,9 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Create view of default project -->
 
-- Create view general projects
+<!-- - Create view general projects -->
 
-- Append to the projecs todo-list-container it's todo with the   reduced views (renderViewTodoFromProject)
+- Append to the projecs todo-list-container it's todo with the reduced views (renderViewTodoFromProject)
+
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

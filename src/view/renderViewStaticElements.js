@@ -132,7 +132,5 @@ function loadStaticElementsView() {
 
 }
 
-
-
 export default loadStaticElementsView
 
