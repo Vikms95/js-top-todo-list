@@ -3,13 +3,17 @@ import { format } from 'date-fns'
 
 const askForTodoInput = () => {
     let title = prompt('Enter title')
-    if(title === null) return
+    if(title === null) return null
+
     // let dueDate = prompt('Enter due date')
     // if(dueDate === null) return
+
     let priority = prompt('Enter priority (1 = low, 3 = high)')
-    if(priority === null) return
+    if(priority === null) return null
+
     let description = prompt('Enter description')
-    if(description === null) return
+    if(description === null) return null
+
     let todo = createTodoObject(title,'29','03','1995',priority,description)
 
     // REAL CODE ^ TEST CODE V
@@ -59,5 +63,6 @@ const generateTodoUniqueID = (function () {
         return id++
     }
 })()
+
 
 export { askForTodoInput }

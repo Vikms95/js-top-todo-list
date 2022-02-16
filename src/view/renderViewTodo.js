@@ -62,6 +62,7 @@ const renderViewTodo = () => {
 
     // Call for askForTodoInput and store the object returned
     const todoObject = askForTodoInput()
+    if(todoObject === null) return null
 
     // Change text content of divs depending on the property values from the object
     addTodoToProjectButton.textContent = '>'
