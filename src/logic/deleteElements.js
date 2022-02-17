@@ -32,7 +32,7 @@ function addEventListenerProjectDeleteButton(element, projectObject) {
         deleteObjectFromStorageArray(projectObject, projectsStorage)
             
         // Call the function that removes project from display (deleting child element)
-        element.parentNode.parentNode.remove()
+        element.parentNode.parentNode.parentNode.parentNode.remove()
         
         console.log(todosStorage)
         console.log(projectsStorage)

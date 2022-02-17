@@ -86,6 +86,7 @@ PROJECT GENERAL SCHEMA:
     create todo and automatically add it to the todoStorage, project array and append it to the display -->
 
 - Border on project does not get erased upon project deletion
+    Todo list is not being deleted
 
 - Make projects and todos not append directly when created
 
