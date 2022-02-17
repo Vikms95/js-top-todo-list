@@ -63,7 +63,6 @@ i{
     flex-flow: row;
     justify-content: flex-start;
     align-items: flex-start;
-    border-bottom: solid 0.5px grey;
     flex: 1 0 auto;
     margin: 20px;
     width: 80%;
@@ -90,13 +89,12 @@ i{
 .buttons{
     opacity:0.3;
     transition: all 0.2s;
-    cursor: pointer;
     display: flex;
     border:none;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
     border: transparent;
 }
 
@@ -105,9 +103,24 @@ i{
 
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .buttons > button{
     background-color: white;
     border: none;
+}
+
+.checkmark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+    width: 22px;
+    border: solid 1px grey;
+    border-radius: 50%;
+    
 }
 
 .header1{
@@ -135,29 +148,32 @@ hr{
 }
 
 .title{
+    font-weight: 900;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px 30px;
     width: fit-content;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .due-date{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
     padding: 5px 30px;
+    width: fit-content;
+    max-width: 50%;
 
 }
 
 .description{
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px;
-    flex: 1 0 200px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    width: fit-content;
+    border-bottom: solid 0.5px grey;
 }
 
 .project-container{
