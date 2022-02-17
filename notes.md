@@ -82,7 +82,10 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Rework todo and project appearance -->
 
-- Create todo from within a project
+<!-- - Create todo from within a project:
+    create todo and automatically add it to the todoStorage, project array and append it to the display -->
+
+- Border on project does not get erased upon project deletion
 
 - Make projects and todos not append directly when created
 

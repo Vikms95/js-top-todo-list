@@ -1,4 +1,6 @@
 import { todosStorage, projectsStorage } from './objectsStorage'
+import renderViewTodoFromProject from '../view/renderViewTodoFromProject'
+import { askForTodoInput } from './createTodoObject'
 
 function addEventListenerTodoAddToProject (element,todoObject){
     element.addEventListener('click', () =>{      
@@ -19,7 +21,15 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
     })
 }
 
-export {addEventListenerTodoAddToProject,addEventListenerTodoAddToProjectFromProject}
+function addEventListenerCreateTodoFromProject (element,projectObject){
+    element.addEventListener('click', () =>{
+        const todo = askForTodoInput()
+        projectObject._attachedProjectTodos.push(todo)
+        renderViewTodoFromProject(todo)
+    })
+}
+
+export {addEventListenerTodoAddToProject,addEventListenerTodoAddToProjectFromProject,addEventListenerCreateTodoFromProject}
 
 const addTodoToProjectFromTodo = (todoObject) =>{
 
