@@ -206,12 +206,12 @@ hr{
 .project-header{
     display: flex;
     flex-direction: row;
+    border-bottom: solid 1px rgba(0, 0, 0);
 }
 
 .todo-list-container{
     display: flex;
     flex-direction: column;
-    border-top: solid 1px black;
     width: 100%;
     flex: 1 0 200px;
 }
