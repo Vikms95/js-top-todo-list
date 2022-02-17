@@ -30,11 +30,9 @@ const renderViewTodoFromProject = (todoAsParameter) => {
     buttons.appendChild(deleteButton)
 
     // Append to todo div > header div, description div
-    todo.appendChild(header)
-
-    //Append to header div > title div and dueDate div
-    header.appendChild(title)
-    header.appendChild(dueDate)
+    todo.appendChild(header)    
+    todo.appendChild(title)
+    todo.appendChild(dueDate)
 
     // Change div id/class
     container.classList.add('todo-container')
@@ -62,7 +60,7 @@ const renderViewTodoFromProject = (todoAsParameter) => {
     dueDate.textContent = todoObject.dueDate
 
     // Change title bg depending on property value 'priority'
-    title.style.backgroundColor = checkTodoPriority(todoObject)
+    dueDate.style.color = checkTodoPriority(todoObject)
 
     // Add event listeners to buttons within the todo div
     addEventListenerTodoDeleteButton(deleteButton, todoObject)

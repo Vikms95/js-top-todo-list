@@ -110,17 +110,17 @@ function loadStaticElementsView() {
 
     navigationBarHeader2.textContent = 'App'
 
-    generalProjectButton.innerHTML = '<i class="fa fa-home"></i>  Home'
+    generalProjectButton.innerHTML = '<i class="fa fa-home fa-lg"></i>  Home'
 
-    defaultProjectButton.innerHTML = '<i class="fa fa-hourglass"></i> Working on...'
+    defaultProjectButton.innerHTML = '<i class="fa fa-hourglass fa-lg"></i> Working on...'
 
-    newProjectButton.innerHTML = '<i class="fa-solid fa-list-check"></i> New project'
+    newProjectButton.innerHTML = '<i class="fa-solid fa-list-check fa-lg"></i> New project'
 
-    newTodoButton.innerHTML = '<i class="fa-solid fa-check"></i> New task'
+    newTodoButton.innerHTML = '<i class="fa-solid fa-check fa-lg"></i> New task'
 
-    todayTodosButton.innerHTML = '<i class="fa-solid fa-cloud-sun"></i> Today'
+    todayTodosButton.innerHTML = '<i class="fa-solid fa-cloud-sun fa-lg"></i> Today'
 
-    upcomingTodosButton.innerHTML = '<i class="fa-solid fa-calendar-days"></i> Upcoming'
+    upcomingTodosButton.innerHTML = '<i class="fa-solid fa-calendar-days fa-lg"></i> Upcoming'
 
 
 

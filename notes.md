@@ -80,8 +80,9 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Append to the projecs todo-list-container it's todo with the reduced views (renderViewTodoFromProject) -->
 
-- Make new project and new task floating buttons on the bottom right:
-    buttons move to the right, append everything after nav button?
+- Rework todo appearance
+
+- Make projects and todos not append directly when created
 
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/

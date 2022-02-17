@@ -8,10 +8,12 @@ const renderViewTodo = () => {
     let dynamicElementsContainer = document.getElementById('dynamic-content')
     // Create container div(row), checkmark div (column), todo div (column)
     const container = document.createElement('div')
+    const checkmark = document.createElement('div')
+    const checkmarkButton = document.createElement('button')
+    const todo = document.createElement('div')
     const buttons = document.createElement('div')
     const deleteButton = document.createElement('button')
     const addTodoToProjectButton = document.createElement('button')
-    const todo = document.createElement('div')
 
     // Create header div (row) with 2 divs, title h1 and dueDate div
     // Create div for description and notes(?)
@@ -21,8 +23,11 @@ const renderViewTodo = () => {
     const description = document.createElement('div')
 
     // Append container to todoElementsContainer, container div > checkmark div, todo div
-    container.appendChild(buttons)
+    container.appendChild(checkmark)
     container.appendChild(todo)
+    container.appendChild(buttons)
+
+    checkmark.appendChild(checkmarkButton)
 
     // Appends buttons to buttons container
     buttons.appendChild(addTodoToProjectButton)
@@ -30,16 +35,16 @@ const renderViewTodo = () => {
 
     // Append to todo div > header div, description div
     todo.appendChild(header)
+    todo.appendChild(title)
+    todo.appendChild(dueDate)
     todo.appendChild(description)
 
-    //Append to header div > title div and dueDate div
-    header.appendChild(title)
-    header.appendChild(dueDate)
 
     // Change div id/class
     container.classList.add('todo-container')
     container.classList.add('faded-out')
 
+    checkmark.classList.add('buttons')
     buttons.classList.add('todo')
     buttons.classList.add('buttons')
     todo.classList.add('todo')
@@ -65,14 +70,15 @@ const renderViewTodo = () => {
     if(todoObject === null) return null
 
     // Change text content of divs depending on the property values from the object
-    addTodoToProjectButton.textContent = '>'
-    deleteButton.textContent = 'X'
+    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-xl"></i>'
+    addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>'
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-xl">'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     description.textContent = todoObject.description
 
     // Change title bg depending on property value 'priority'
-    title.style.backgroundColor = checkTodoPriority(todoObject)
+    dueDate.style.color = checkTodoPriority(todoObject)
 
     // Add event listeners to buttons within the todo div
     addEventListenerTodoDeleteButton(deleteButton, todoObject)
@@ -89,9 +95,9 @@ export default renderViewTodo
 
 function checkTodoPriority(todo) {
     const PRIORITY_COLORS = {
-        1: 'lightskyblue',
-        2: 'lightgoldenrodyellow',
-        3: 'lightcoral',
+        1: 'darkblue',
+        2: 'darkorange',
+        3: 'crimson',
     }
     return PRIORITY_COLORS[todo.priority]
 }

@@ -11,11 +11,12 @@ body{
 .nav-bar{
     display: flex;
     flex-flow: column nowrap;
+    position: sticky;
     padding: 40px;
     padding-top: 0px;
     gap: 20px;
     height:100vh;
-    width: 30vh;
+    width: 20vh;
     background-color: rgb(235, 222, 206);
 }
 
@@ -53,17 +54,20 @@ i{
     flex-flow: column wrap;
     justify-content: flex-start;
     width: 100%;
+    padding: 50px;
 
 }
 
 .todo-container{
     display: flex;
     flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: solid 0.5px grey;
     flex: 1 0 auto;
     margin: 20px;
     width: 80%;
-    max-height: 200px;
-    position: relative;
+    max-height: 100px;
     transition: opacity 400ms;
     will-change: opacity;
 }
@@ -72,22 +76,38 @@ i{
     opacity: 0;
 }
 
-.todo{
-    display: flex;
-    
-}
 
 .todo.body{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+
 }
 
+
 .buttons{
+    opacity:0.3;
+    transition: all 0.2s;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    padding: 10px;
     border:none;
-    
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    border: transparent;
+}
+
+.buttons:hover{
+    opacity: 1;
+
+}
+
+.buttons > button{
+    background-color: white;
+    border: none;
 }
 
 .header1{
@@ -118,7 +138,6 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px black;
     padding: 5px 30px;
     width: fit-content;
     max-width: 50%;
@@ -130,18 +149,15 @@ hr{
     align-items: center;
     width: fit-content;
     padding: 5px 30px;
-    border-top: solid 1px black;
-    border-right: solid 1px black;
-    border-top-right-radius: 20px;
+
 }
 
 .description{
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 10px;
     flex: 1 0 200px;
-    border-top: solid 1px black;
 }
 
 .project-container{

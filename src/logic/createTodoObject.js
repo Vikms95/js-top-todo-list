@@ -41,7 +41,7 @@ const createTodoObject = (
     description
 ) => {
     const _id = generateTodoUniqueID() // It will be end up private, public for now
-    let dueDate = format(new Date(dueYear, dueMonth, dueDay), 'PPPP')
+    let dueDate = format(new Date(dueYear, dueMonth, dueDay), 'dm')
     let projectTitleItBelongs = ''
     let checkmark = false
     
