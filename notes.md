@@ -80,7 +80,9 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Append to the projecs todo-list-container it's todo with the reduced views (renderViewTodoFromProject) -->
 
-- Rework todo appearance
+<!-- - Rework todo and project appearance -->
+
+- Create todo from within a project
 
 - Make projects and todos not append directly when created
 

@@ -20,14 +20,17 @@ const renderViewProject = (projectAsParameter) => {
     const project = document.createElement('div')
 
     // Create divs within project div
+    const header = document.createElement('div')
     const title = document.createElement('div')
+    const projectButtons = document.createElement('div')
     const todoListContainer = document.createElement('div')
     const todoList = document.createElement('ol') // Will try using <ol> and <li>
 
     // Append container div > checkmark div, todo div
-    container.appendChild(buttons)
     container.appendChild(project)
-    project.appendChild(title)
+    project.appendChild(header)
+    header.appendChild(title)
+    header.appendChild(buttons)
     project.appendChild(todoListContainer)
     todoListContainer.appendChild(todoList)
 
@@ -49,7 +52,9 @@ const renderViewProject = (projectAsParameter) => {
     container.classList.add('project-container')
     container.classList.add('faded-out')
     buttons.classList.add('buttons')
+    buttons.classList.add('right')
     project.classList.add('project')
+    header.classList.add('project-header')
     title.classList.add('project')
     title.classList.add('title')
     todoListContainer.classList.add('todo-list-container')
@@ -62,14 +67,10 @@ const renderViewProject = (projectAsParameter) => {
   
 
     // Change text content of divs depending on the property values from the object
-    addTodoToProjectButton.textContent = '>'
-    deleteButton.textContent = 'X'
-    toggleDefaultStateButton.textContent = 'D'
+    addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>'
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
+    toggleDefaultStateButton.innerHTML = '<i class="fa-solid fa-font-awesome"></i>'
     title.textContent = projectObject.title
-
-    // Change title bg depending on property value 'priority'
-    title.style.backgroundColor = 'rgb(241, 214, 181)'
-
 
     // Add event listeners to buttons within the todo di
     addEventListenerProjectDeleteButton(deleteButton, projectObject)

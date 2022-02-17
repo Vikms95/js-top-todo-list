@@ -14,7 +14,7 @@ const askForTodoInput = () => {
     let description = prompt('Enter description')
     if(description === null) return null
 
-    let todo = createTodoObject(title,'29','03','1995',priority,description)
+    let todo = createTodoObject(title,'17/02/2017',priority,description)
 
     // REAL CODE ^ TEST CODE V
 
@@ -34,14 +34,12 @@ const askForTodoInput = () => {
 
 const createTodoObject = (
     title,
-    dueDay,
-    dueMonth,
-    dueYear,
+    // dueDate,
     priority,
     description
 ) => {
     const _id = generateTodoUniqueID() // It will be end up private, public for now
-    let dueDate = format(new Date(dueYear, dueMonth, dueDay), 'dm')
+    let dueDate = format(new Date(2022, 2, 17), 'E d')
     let projectTitleItBelongs = ''
     let checkmark = false
     

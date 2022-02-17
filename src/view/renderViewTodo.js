@@ -26,8 +26,8 @@ const renderViewTodo = () => {
     container.appendChild(checkmark)
     container.appendChild(todo)
     container.appendChild(buttons)
-
     checkmark.appendChild(checkmarkButton)
+
 
     // Appends buttons to buttons container
     buttons.appendChild(addTodoToProjectButton)
@@ -47,11 +47,10 @@ const renderViewTodo = () => {
     checkmark.classList.add('checkmark')
     buttons.classList.add('todo')
     buttons.classList.add('buttons')
+    buttons.classList.add('right')
     todo.classList.add('todo')
     todo.classList.add('body')
 
-    header.classList.add('todo')
-    header.classList.add('header')
     title.classList.add('todo')
     title.classList.add('title')
     dueDate.classList.add('due-date')
@@ -71,11 +70,11 @@ const renderViewTodo = () => {
 
     // Change text content of divs depending on the property values from the object
     checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-lg"></i>'
-    addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>'
-    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     description.textContent = todoObject.description
+    addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>'
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
 
     // Change title bg depending on property value 'priority'
     dueDate.style.color = checkTodoPriority(todoObject)

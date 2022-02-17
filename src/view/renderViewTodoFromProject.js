@@ -11,40 +11,44 @@ const renderViewTodoFromProject = (todoAsParameter) => {
     if(todoObject === null) return null
     
     // Create container div(row), checkmark div (column), todo div (column)
-    const container = document.createElement('li')
+    const container = document.createElement('div')
+    const checkmark = document.createElement('div')
+    const checkmarkButton = document.createElement('button')
+    const todo = document.createElement('div')
     const buttons = document.createElement('div')
     const deleteButton = document.createElement('button')
-    const todo = document.createElement('div')
 
     // Create header div (row) with 2 divs, title h1 and dueDate div
     // Create div for description and notes(?)
-    const header = document.createElement('div')
     const title = document.createElement('div')
     const dueDate = document.createElement('div')
 
     // Append container to todoElementsContainer, container div > checkmark div, todo div
-    container.appendChild(buttons)
+    container.appendChild(checkmark)
     container.appendChild(todo)
+    container.appendChild(buttons)
+    checkmark.appendChild(checkmarkButton)
 
     // Appends buttons to buttons container
     buttons.appendChild(deleteButton)
 
     // Append to todo div > header div, description div
-    todo.appendChild(header)    
     todo.appendChild(title)
     todo.appendChild(dueDate)
 
     // Change div id/class
+
     container.classList.add('todo-container')
     container.classList.add('faded-out')
 
+    checkmark.classList.add('buttons')
+    checkmark.classList.add('checkmark')
     buttons.classList.add('todo')
     buttons.classList.add('buttons')
+    buttons.classList.add('right')
     todo.classList.add('todo')
     todo.classList.add('body')
 
-    header.classList.add('todo')
-    header.classList.add('header')
     title.classList.add('todo')
     title.classList.add('title')
     dueDate.classList.add('due-date')
@@ -55,9 +59,10 @@ const renderViewTodoFromProject = (todoAsParameter) => {
     })
   
     // Change text content of divs depending on the property values from the object
-    deleteButton.textContent = 'X'
+    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-lg"></i>'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
 
     // Change title bg depending on property value 'priority'
     dueDate.style.color = checkTodoPriority(todoObject)
