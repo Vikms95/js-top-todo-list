@@ -34,7 +34,6 @@ const renderViewTodo = () => {
     buttons.appendChild(deleteButton)
 
     // Append to todo div > header div, description div
-    todo.appendChild(header)
     todo.appendChild(title)
     todo.appendChild(dueDate)
     todo.appendChild(description)
@@ -45,6 +44,7 @@ const renderViewTodo = () => {
     container.classList.add('faded-out')
 
     checkmark.classList.add('buttons')
+    checkmark.classList.add('checkmark')
     buttons.classList.add('todo')
     buttons.classList.add('buttons')
     todo.classList.add('todo')
@@ -70,9 +70,9 @@ const renderViewTodo = () => {
     if(todoObject === null) return null
 
     // Change text content of divs depending on the property values from the object
-    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-xl"></i>'
-    addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>'
-    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-xl">'
+    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-lg"></i>'
+    addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>'
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     description.textContent = todoObject.description
