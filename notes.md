@@ -90,6 +90,7 @@ PROJECT GENERAL SCHEMA:
 <!-- - Make projects and todos not append directly when created -->
 
 - Do not show todos individually if they are part of a project
+  :adding todos from project does not change projectTitleItBelongs?
 
   - Home structure:
     - Individual task not attached to a project

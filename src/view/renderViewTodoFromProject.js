@@ -78,9 +78,9 @@ export default renderViewTodoFromProject
 
 function checkTodoPriority(todo) {
     const PRIORITY_COLORS = {
-        1: 'lightskyblue',
-        2: 'lightgoldenrodyellow',
-        3: 'lightcoral',
+        1: 'darkblue',
+        2: 'darkorange',
+        3: 'crimson',
     }
     return PRIORITY_COLORS[todo.priority]
 }

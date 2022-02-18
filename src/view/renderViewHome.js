@@ -9,6 +9,7 @@ function renderViewHome () {
     }
 
     todosStorage.forEach(todo =>{
+        console.log(todo.projectTitleItBelongs)
         if(todo && (!(todo.projectTitleItBelongs))){
             renderViewTodo(todo)
         }
@@ -24,6 +25,16 @@ function renderViewHome () {
             if((project._attachedProjectTodos.length > 0 && isProjectWithTodos)  ){
                 renderViewProject(project)
             }
+        }
+    })
+
+    projectsStorage.forEach(project =>{
+        if(project){
+            const isProjectWithNoTodos = project._attachedProjectTodos
+                .every(project => Object.keys(project).length === 0)
+
+            if((isProjectWithNoTodos))
+                renderViewProject(project)
         }
     })
 }

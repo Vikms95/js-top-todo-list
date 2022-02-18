@@ -25,6 +25,7 @@ function addEventListenerCreateTodoFromProject (element,projectObject){
     element.addEventListener('click', () =>{
         const todo = askForTodoInput()
         projectObject._attachedProjectTodos.push(todo)
+        todo.projectTitleItBelongs = projectObject.title
         renderViewTodoFromProject(todo)
     })
 }
