@@ -6,12 +6,9 @@ const askForProjectInput = () => {
         return null
     }  
 
-    // REAL CODE ^ TEST CODE V
-
     const project = createProjectObject(title)
 
     projectsStorage.push(project)
-    console.log(projectsStorage)
     return project
 }
 
@@ -46,7 +43,6 @@ const isProjectTitleValid = (title) =>{
         alert('Title needs a min of 1 character and no more than 40 characters!')
         return false
     }
-
 
     const projectExist = projectsStorage
         .some(project => project.title === title)
