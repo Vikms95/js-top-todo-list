@@ -4,7 +4,7 @@ import { addEventListenerProjectDeleteButton } from '../logic/deleteElements'
 import { addEventListenerTodoAddToProjectFromProject,addEventListenerCreateTodoFromProject } from '../logic/insertElements'
 import { addEventListenerToogleDefaultStateButton } from '../logic/modifyElements'
 
-const renderViewProject = (projectAsParameter) => {
+function renderViewProject(projectAsParameter){
     let dynamicElementsContainer = document.getElementById('dynamic-content')
     
     // Call for askForProjectInput and store the object returned

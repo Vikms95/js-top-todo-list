@@ -30,7 +30,7 @@ PROJECT GENERAL SCHEMA:
 
     :DOM-creation
         -renderViewDefaultProject (loads a div for the project object and it's todos objects with default property set to true)
-        -renderViewGeneralProjects (loads all projects objects with it's todos objects)
+        -renderViewHome (loads all projects objects with it's todos objects)
         -renderViewProject (imports createProjectObject)
         -renderViewStaticElements
         -renderViewTodayTodos (loads all todos with due date for the current day)
@@ -85,10 +85,18 @@ PROJECT GENERAL SCHEMA:
 <!-- - Create todo from within a project:
     create todo and automatically add it to the todoStorage, project array and append it to the display -->
 
-- Border on project does not get erased upon project deletion
-    Todo list is not being deleted
+<!-- - Border on project does not get erased upon project deletion: Todo list is not being deleted -->
 
-- Make projects and todos not append directly when created
+<!-- - Make projects and todos not append directly when created -->
+
+- Do not show todos individually if they are part of a project
+
+  - Home structure:
+    - Individual task not attached to a project
+    - Projects with task in it
+    - Projects without task in it
 
 - Look into date library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/
+
+- Nav bar breaks whenever page is shrinked vertically

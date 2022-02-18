@@ -2,15 +2,17 @@ import {renderViewProject} from './renderViewProject'
 
 import { renderViewDefaultProject } from './renderViewDefaultProject'
 
-import { renderViewGeneralProject } from './renderViewGeneralProjects'
+import { renderViewHome } from './renderViewHome'
 
 import renderViewTodo from './renderViewTodo'
 
 import newButtonEventListener from '../logic/createStaticElements'
+import { askForProjectInput } from '../logic/createProjectObject'
+import { askForTodoInput } from '../logic/createTodoObject'
 
 
 
-function loadStaticElementsView() {
+function renderStaticElementsView() {
 
     // Static containers
 
@@ -127,15 +129,15 @@ function loadStaticElementsView() {
 
     //Add event listeners to static elements (imported from createStaticElements)
 
-    newButtonEventListener(generalProjectButton,renderViewGeneralProject)
+    newButtonEventListener(generalProjectButton,renderViewHome)
 
     newButtonEventListener(defaultProjectButton,renderViewDefaultProject)
 
-    newButtonEventListener(newProjectButton, renderViewProject)
+    newButtonEventListener(newProjectButton, askForProjectInput)
 
-    newButtonEventListener(newTodoButton, renderViewTodo)
+    newButtonEventListener(newTodoButton, askForTodoInput)
 
 }
 
-export default loadStaticElementsView
+export default renderStaticElementsView
 

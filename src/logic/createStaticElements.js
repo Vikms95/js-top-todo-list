@@ -9,7 +9,8 @@ function newButtonEventListener(element, functionToUse) {
     element.addEventListener('click', () => {
         const container = document.getElementById('content')
         const element = functionToUse()
-        if(element === null || element === undefined) return
+        console.log(element)
+        if((element === null || element === undefined || !(element.nodeType))) return
         container.appendChild(element)
     })
 }

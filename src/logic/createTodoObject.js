@@ -34,12 +34,12 @@ const askForTodoInput = () => {
 
 const createTodoObject = (
     title,
-    // dueDate,
+    dueDate,
     priority,
     description
 ) => {
     const _id = generateTodoUniqueID() // It will be end up private, public for now
-    let dueDate = format(new Date(2022, 2, 17), 'E d')
+    dueDate = format(new Date(2022, 2, 17), 'E d')
     let projectTitleItBelongs = ''
     let checkmark = false
     

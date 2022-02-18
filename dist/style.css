@@ -66,6 +66,7 @@ i{
     align-items: flex-start;
     flex: 1 0 auto;
     margin: 20px;
+    padding-bottom:20px;
     width: 80%;
     max-height: 100px;
     transition: opacity 400ms;

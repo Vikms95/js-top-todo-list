@@ -4,7 +4,7 @@ import { addEventListenerTodoAddToProject } from '../logic/insertElements'
 
 // Will be called whenever the 'new todo' button is pressed,
 // it chain calls createTodoObject > askForTodoInput
-const renderViewTodo = () => {
+function renderViewTodo (todoAsParameter) {
     let dynamicElementsContainer = document.getElementById('dynamic-content')
     // Create container div(row), checkmark div (column), todo div (column)
     const container = document.createElement('div')
@@ -65,7 +65,7 @@ const renderViewTodo = () => {
   
 
     // Call for askForTodoInput and store the object returned
-    const todoObject = askForTodoInput()
+    const todoObject = todoAsParameter || askForTodoInput()
     if(todoObject === null) return null
 
     // Change text content of divs depending on the property values from the object
@@ -90,7 +90,7 @@ const renderViewTodo = () => {
     return dynamicElementsContainer
 }
 
-export default renderViewTodo
+export {renderViewTodo}
 
 function checkTodoPriority(todo) {
     const PRIORITY_COLORS = {

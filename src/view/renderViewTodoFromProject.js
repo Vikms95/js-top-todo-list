@@ -4,7 +4,7 @@ import { addEventListenerTodoAddToProject } from '../logic/insertElements'
 
 // Will be called whenever the 'new todo' button is pressed,
 // it chain calls createTodoObject > askForTodoInput
-const renderViewTodoFromProject = (todoAsParameter) => {
+function renderViewTodoFromProject(todoAsParameter){
     
     // Call for askForTodoInput and store the object returned
     const todoObject = todoAsParameter || askForTodoInput()
