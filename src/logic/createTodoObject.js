@@ -3,7 +3,12 @@ import { format } from 'date-fns'
 
 const askForTodoInput = () => {
     let title = prompt('Enter title')
-    if(title === null) return null
+    if(title === null){
+        return null
+    }else if(title.length < 1 || title.length > 40){
+        alert('Title needs a min of 1 character and no more than 40 characters!')
+        return
+    }
 
     // let dueDate = prompt('Enter due date')
     // if(dueDate === null) return
@@ -12,7 +17,12 @@ const askForTodoInput = () => {
     if(priority === null) return null
 
     let description = prompt('Enter description')
-    if(description === null) return null
+    if(description === null){ 
+        return null
+    }else if(description.length > 80){
+        alert('Description can\'t be more than 80 characters!')
+        return
+    }
 
     let todo = createTodoObject(title,'17/02/2017',priority,description)
 

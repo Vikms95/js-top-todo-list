@@ -40,7 +40,13 @@ const generateProjectUniqueID = (function () {
 
 const isProjectTitleValid = (title) =>{
     // Check if user has finished the alert via cancel button
-    if(title === null) return false
+    if(title === null){
+        return false
+    }else if(title.length < 1 || title.length > 40){
+        alert('Title needs a min of 1 character and no more than 40 characters!')
+        return false
+    }
+
 
     const projectExist = projectsStorage
         .some(project => project.title === title)

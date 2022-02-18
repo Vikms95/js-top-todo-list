@@ -85,7 +85,6 @@ function renderViewTodo (todoAsParameter) {
 
     // Append container last to avoid empty container created
     dynamicElementsContainer.appendChild(container)
-
     // Return container to be appended in index.js
     return dynamicElementsContainer
 }

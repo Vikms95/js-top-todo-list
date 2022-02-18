@@ -7,13 +7,30 @@ function renderViewHome () {
     while(dynamicElementsContainer.firstChild){
         dynamicElementsContainer.firstChild.remove()
     }
+    const notAttachedTodosHeader = document.createElement('h3')
+    const projectsWithTodosHeader = document.createElement('h3')
+    const emptyProjectsHeader = document.createElement('h3')
 
+    notAttachedTodosHeader.classList.add('home-header')
+    notAttachedTodosHeader.classList.add('not-attached')
+    projectsWithTodosHeader.classList.add('home-header')
+    emptyProjectsHeader.classList.add('home-header')
+    emptyProjectsHeader.classList.add('empty-projects')
+
+    notAttachedTodosHeader.textContent = 'Unnatached task'
+    projectsWithTodosHeader.textContent = 'Projects'
+    emptyProjectsHeader.textContent = 'Empty projects'
+
+    dynamicElementsContainer.appendChild(notAttachedTodosHeader)
+    
     todosStorage.forEach(todo =>{
         console.log(todo.projectTitleItBelongs)
         if(todo && (!(todo.projectTitleItBelongs))){
             renderViewTodo(todo)
         }
     })
+
+    dynamicElementsContainer.appendChild(projectsWithTodosHeader)
 
     projectsStorage.forEach(project =>{
         // if the project is not an empty string
@@ -27,6 +44,8 @@ function renderViewHome () {
             }
         }
     })
+
+    dynamicElementsContainer.appendChild(emptyProjectsHeader)
 
     projectsStorage.forEach(project =>{
         if(project){

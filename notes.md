@@ -89,15 +89,17 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Make projects and todos not append directly when created -->
 
-- Do not show todos individually if they are part of a project
-  :adding todos from project does not change projectTitleItBelongs?
+<!-- - Do not show todos individually if they are part of a project
+  :adding todos from project does not change projectTitleItBelongs? Was not changing it's projectItBelongsTo property -->
 
-  - Home structure:
+  <!-- - Home structure:
     - Individual task not attached to a project
     - Projects with task in it
-    - Projects without task in it
+    - Projects without task in it -->
 
-- Look into date library
+- Give title and description a cap of characters
+
+- Look into date-fns library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/
 
 - Nav bar breaks whenever page is shrinked vertically
