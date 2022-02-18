@@ -69,7 +69,7 @@ function renderViewTodo (todoAsParameter) {
     if(todoObject === null) return null
 
     // Change text content of divs depending on the property values from the object
-    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-lg"></i>'
+    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-2xs"></i>'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     description.textContent = todoObject.description

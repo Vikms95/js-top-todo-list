@@ -17,7 +17,7 @@ function renderViewHome () {
     emptyProjectsHeader.classList.add('home-header')
     emptyProjectsHeader.classList.add('empty-projects')
 
-    notAttachedTodosHeader.textContent = 'Unnatached task'
+    notAttachedTodosHeader.textContent = 'Unnattached task'
     projectsWithTodosHeader.textContent = 'Projects'
     emptyProjectsHeader.textContent = 'Empty projects'
 

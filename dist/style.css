@@ -61,7 +61,7 @@ i{
     justify-content: flex-start;
     width: 100%;
     padding: 50px;
-    gap:150px;
+    gap:50px;
     margin-left: 250px;
     margin-bottom: 50px;
 
@@ -117,6 +117,7 @@ i{
 
 button:hover{
     cursor: pointer;
+    size: 2px;
 }
 
 .buttons > button{
@@ -130,13 +131,14 @@ button:hover{
 }
 
 .checkmark{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 22px;
-    width: 22px;
+    text-align: center;
+    height: 26px;
+    width: 26px;
+    padding: 0px;
+    margin-top: 5px;
     border: solid 1px grey;
     border-radius: 50%;
+    overflow: hidden;
     
 }
 
@@ -224,26 +226,16 @@ hr{
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex: 1 0 200px;
-    margin-bottom: 20px;
-
 }
 
 .todo-list{
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex: 1 0 200px;
-  margin-bottom: 20px;
   gap: 10px;
 }
 
 .home-header{
   background-color:rgb(235, 222, 206) ;
   padding: 10px;
-  margin: -60px 0px;
-}
-
-.not-attached{
-  margin-top: 30px;
 }

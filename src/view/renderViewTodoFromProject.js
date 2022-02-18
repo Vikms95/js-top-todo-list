@@ -59,7 +59,7 @@ function renderViewTodoFromProject(todoAsParameter){
     })
   
     // Change text content of divs depending on the property values from the object
-    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-lg"></i>'
+    checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-2xs"></i>'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
