@@ -39,9 +39,20 @@ function addEventListenerProjectDeleteButton(element, projectObject) {
     })
 }
 
+function addEventListenerCheckmarkButton(element,todoObject){
+    element.addEventListener('click', () => {
+        if(todoObject.checkmark === false){
+            todoObject.checkmark = true
+        }else{
+            todoObject.checkmark = false
+        }
+    })
+}
+
 export {
     addEventListenerTodoDeleteButton,
     addEventListenerProjectDeleteButton,
+    addEventListenerCheckmarkButton
 }
 
 const deleteObjectFromStorageArray = (object, array) => {
