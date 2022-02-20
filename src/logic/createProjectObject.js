@@ -1,4 +1,5 @@
 import { projectsStorage } from './objectsStorage'
+import { saveObjectToLocalStorage } from './insertElements'
 
 const askForProjectInput = () => {
     let title = prompt('Enter title')
@@ -9,6 +10,7 @@ const askForProjectInput = () => {
     const project = createProjectObject(title)
 
     projectsStorage.push(project)
+    saveObjectToLocalStorage(project)
     return project
 }
 

@@ -30,7 +30,21 @@ function addEventListenerCreateTodoFromProject (element,projectObject){
     })
 }
 
-export {addEventListenerTodoAddToProject,addEventListenerTodoAddToProjectFromProject,addEventListenerCreateTodoFromProject}
+function saveObjectToLocalStorage(object){
+    localStorage.setItem(object.title, object)
+}
+
+function getObjectFromLocalStorage(objectKey){
+    return localStorage.getItem(objectKey)
+}
+
+export {
+    addEventListenerTodoAddToProject,
+    addEventListenerTodoAddToProjectFromProject,
+    addEventListenerCreateTodoFromProject,
+    saveObjectToLocalStorage,
+    getObjectFromLocalStorage
+}
 
 const addTodoToProjectFromTodo = (todoObject) =>{
 

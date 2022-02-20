@@ -1,5 +1,6 @@
 import { todosStorage } from './objectsStorage'
 import { format } from 'date-fns'
+import { saveObjectToLocalStorage } from './insertElements'
 
 const askForTodoInput = () => {
     let title = prompt('Enter title')
@@ -25,13 +26,14 @@ const askForTodoInput = () => {
 
     let todo = createTodoObject(title,18,2,2022,priority,description)
     todosStorage.push(todo)
+    saveObjectToLocalStorage(todo)
     
     return todo
 }
 
 const createTodoObject = (title,dueDay,dueMonth,dueYear,priority,description) => {
     const _id = generateTodoUniqueID() // It will be end up private, public for now
-    let dueDate = format(new Date(dueYear,dueMonth, dueDay), 'E d')
+    let dueDate = format(new Date(dueYear,dueMonth, dueDay), 'MMMM, E d')
     let projectTitleItBelongs = ''
     let checkmark = false
     

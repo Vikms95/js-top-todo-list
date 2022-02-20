@@ -104,9 +104,15 @@ PROJECT GENERAL SCHEMA:
 <!-- - Give functionality to checkmark button:
   It will be given the property done = true, and it will be erased from it's projects or unnattached list, but it will appear at the Archived task section -->
 
-- Nav bar breaks whenever page is shrinked vertically
+<!-- - Nav bar breaks whenever page is shrinked vertically -->
 
-- Look into date-fns library
-https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/
+<!-- - Look into date-fns library
+https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
 
-- Implement localStorage
+- Implement localStorage:
+    edge > if todo and project have same name, it does not know what to import
+    How to implement all the content inside localStorage on page load
+
+- Implement instant update of page upon change
+
+- Expand a single todo
