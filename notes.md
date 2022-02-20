@@ -101,10 +101,12 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Checkmark icon not appearing on project's todos -->
 
-- Give functionality to checkmark button:
-  It will be given the property done = true, and it will be erased from it's projects or unnattached list, but it will appear at the Archived task section
+<!-- - Give functionality to checkmark button:
+  It will be given the property done = true, and it will be erased from it's projects or unnattached list, but it will appear at the Archived task section -->
+
+- Nav bar breaks whenever page is shrinked vertically
 
 - Look into date-fns library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/
 
-- Nav bar breaks whenever page is shrinked vertically
+- Implement localStorage

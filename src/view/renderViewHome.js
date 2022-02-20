@@ -4,9 +4,11 @@ import {todosStorage, projectsStorage } from '../logic/objectsStorage'
 
 function renderViewHome () {
     const dynamicElementsContainer = document.getElementById('dynamic-content')
+    
     while(dynamicElementsContainer.firstChild){
         dynamicElementsContainer.firstChild.remove()
     }
+
     const notAttachedTodosHeader = document.createElement('h3')
     const projectsWithTodosHeader = document.createElement('h3')
     const emptyProjectsHeader = document.createElement('h3')
@@ -67,8 +69,6 @@ function renderViewHome () {
                 renderViewTodo(todo)
         }
     })
-
-
 }
 
 export {renderViewHome}
