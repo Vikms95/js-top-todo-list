@@ -28,7 +28,7 @@ html{
     padding: 40px;
     padding-top: 0px;
     gap: 20px;
-    min-height:100%;
+    min-height:100vh;
     flex:1;
     bottom:0;
     width: 20vh;
@@ -58,7 +58,6 @@ button.nav-button:hover{
 i{
   color:rgb(107, 15, 15) ;
 }
-
 
 #dynamic-content{
     display: flex;
