@@ -40,6 +40,8 @@ function renderViewHome () {
     projectsStorage.forEach(project =>{
         // if the project is not an empty string
         if(project){ 
+            project = JSON.parse(project)
+            console.log(project)
             // if the project todo's list has any index which is not an empty object
             const isProjectWithTodos = project._attachedProjectTodos
                 .some(todo => Object.keys(todo).length > 0)

@@ -110,17 +110,18 @@ PROJECT GENERAL SCHEMA:
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
 
 
-- Delete todo from project still loads empty todo inside project after reload
+<!-- - Delete todo from project still loads empty todo inside project after reload
 
-- Delete todo from project whenever checkmark is used from within the project
+- Delete todo from project whenever checkmark is used from within the project -->
 
 - Implement localStorage:
     <!-- How to implement all the content inside localStorage on page load -->
-    edge > if todo and project have same name, it does not know what to import
-          : apply different protos to Project and Todo
-        > .attachedProjectTodos from project object gets lost
-          : todo is saved in the session array whenever inserted, but not on the localstorage array (change it on addTodoToProjectFromTodo - addTodoToProjectFromTodo )
-        > duplicated todos get lost when fetching them and only one is fetched
+    <!-- edge > if todo and project have same name, it does not know what to import
+          : apply different protos to Project and Todo -->
+         > .attachedProjectTodos from project object gets lost
+          : todo is saved in the session array whenever inserted, but not on the localstorage array (change it on addTodoToProjectFromTodo - addTodoToProjectFromTodo, replace the project on localStorage with current project with the todo-list updated )
+         > duplicated todos get lost when fetching them and only one is fetched
+         > page errors on load because it cannot load properties of an undefined object (line 46) need to look up JSON.parse and JSON.stringify usages
 
 https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
 

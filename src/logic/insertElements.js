@@ -6,6 +6,7 @@ function addEventListenerTodoAddToProject (element,todoObject){
     element.addEventListener('click', () =>{      
         if(!(todoObject.projectTitleItBelongs)){
             addTodoToProjectFromTodo(todoObject)
+
         }else{
             alert('Task already assigned to a project.')
             return
@@ -18,6 +19,7 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
         const todoTitleToInsert = prompt('Insert the todo title that you want to add to this project')
         if(todoTitleToInsert === null){return}
         addTodoToProjectFromProject(projectObject,todoTitleToInsert)
+        localStorage.setItem(projectObject.title,projectObject)        
     })
 }
 
@@ -26,11 +28,13 @@ function addEventListenerCreateTodoFromProject (element,projectObject){
         const todo = askForTodoInput()
         projectObject._attachedProjectTodos.push(todo)
         todo.projectTitleItBelongs = projectObject.title
+        saveObjectToLocalStorage(projectObject.title,projectObject)
         renderViewTodoFromProject(todo)
     })
 }
 
 function saveObjectToLocalStorage(object){
+    let isObjectInLocalStorage = localStorage.getItem(object.title)
     localStorage.setItem(object.title, JSON.stringify(object))
 }
 
@@ -39,13 +43,11 @@ function fetchObjecsFromLocalStorage(){
 
     arrayOfKeys.forEach(key =>{
         console.log(key)
-        let object = JSON.parse(localStorage.getItem(key))
+        let object = localStorage.getItem(key)
         if(object.prototypeMadeUp === 'todo'){
             todosStorage.push(object)
         }else{
             projectsStorage.push(object)
-            console.log(object)            
-
         }
     })
     
@@ -70,6 +72,7 @@ const addTodoToProjectFromTodo = (todoObject) =>{
 
     if(projectToAddTodo){
         projectToAddTodo._attachedProjectTodos.push(todoObject)
+        localStorage.setItem(projectTitleToInsert,projectToAddTodo)        
         todoObject.projectTitleItBelongs = projectTitleToInsert
     }else{
         alert('Project does not exist. Make sure the title is well written or create the project.')
@@ -91,5 +94,5 @@ const addTodoToProjectFromProject = (projectObject,todoTitleToInsert) =>{
 }
 
 const updatePropertiesProjectOnLocalStorage = () => {
-    
+
 }
