@@ -111,10 +111,12 @@ https://www.section.io/engineering-education/javascript-dates-manipulation-with-
 
 
 - Implement localStorage:
+    <!-- How to implement all the content inside localStorage on page load -->
     edge > if todo and project have same name, it does not know what to import
           : apply different protos to Project and Todo
-    <!-- How to implement all the content inside localStorage on page load -->
+        > .attachedProjectTodos from project object gets lost
         > duplicated todos get lost when fetching them and only one is fetched
+
 
 - Delete todo from project still loads empty todo inside project after reload
 

@@ -40,8 +40,13 @@ function fetchObjecsFromLocalStorage(){
     arrayOfKeys.forEach(key =>{
         console.log(key)
         let object = JSON.parse(localStorage.getItem(key))
-        todosStorage.push(object)
-        console.log(object.priority)
+        if(object.prototypeMadeUp === 'todo'){
+            todosStorage.push(object)
+        }else{
+            projectsStorage.push(object)
+            console.log(object)            
+
+        }
     })
     
 }

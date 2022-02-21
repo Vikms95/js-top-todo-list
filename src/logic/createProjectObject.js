@@ -16,11 +16,13 @@ const askForProjectInput = () => {
 
 const createProjectObject = (title) => {
     const _id = generateProjectUniqueID()
+    const prototypeMadeUp = 'project'
     let isDefault = false 
     let _attachedProjectTodos = [] // Will store ID, then get compared with todosStorage, will be private
     
     return {
         _id,
+        prototypeMadeUp,
         title,
         isDefault,
         _attachedProjectTodos,

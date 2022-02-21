@@ -4,6 +4,7 @@ import { saveObjectToLocalStorage } from './insertElements'
 
 const askForTodoInput = () => {
     let title = prompt('Enter title')
+  
     if(title === null){
         return null
     }else if(title.length < 1 || title.length > 40){
@@ -27,18 +28,20 @@ const askForTodoInput = () => {
     let todo = createTodoObject(title,18,2,2022,priority,description)
     todosStorage.push(todo)
     saveObjectToLocalStorage(todo)
-    
+
     return todo
 }
 
 const createTodoObject = (title,dueDay,dueMonth,dueYear,priority,description) => {
     const _id = generateTodoUniqueID() // It will be end up private, public for now
+    const prototypeMadeUp = 'todo'
     let dueDate = format(new Date(dueYear,dueMonth, dueDay), 'MMMM, E d')
     let projectTitleItBelongs = ''
     let checkmark = false
     
     return {
         _id,
+        prototypeMadeUp,
         title,
         dueDate,
         priority,
