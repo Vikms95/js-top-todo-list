@@ -11,6 +11,7 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
         }
 
         deleteObjectFromStorageArray(todoObject, todosStorage)
+        localStorage.removeItem(todoObject.title)
           
         // Call the function that removes todo from display (deleting child element)
         element.parentNode.parentNode.remove()
@@ -30,6 +31,7 @@ function addEventListenerProjectDeleteButton(element, projectObject) {
             
         // Call the function that removes project from general project array
         deleteObjectFromStorageArray(projectObject, projectsStorage)
+        localStorage.removeItem(projectObject.title)
             
         // Call the function that removes project from display (deleting child element)
         element.parentNode.parentNode.parentNode.parentNode.remove()

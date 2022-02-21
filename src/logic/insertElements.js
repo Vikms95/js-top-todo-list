@@ -34,16 +34,12 @@ function saveObjectToLocalStorage(object){
     localStorage.setItem(object.title, JSON.stringify(object))
 }
 
-function getObjectFromLocalStorage(objectKey){
-    return JSON.parse(localStorage.getItem(objectKey))
-}
-
 function fetchObjecsFromLocalStorage(){
     let arrayOfKeys = Object.keys(localStorage)
+
     arrayOfKeys.forEach(key =>{
         console.log(key)
-
-        let object = localStorage.getItem(key)
+        let object = JSON.parse(localStorage.getItem(key))
         todosStorage.push(object)
         console.log(object.priority)
     })
@@ -55,7 +51,6 @@ export {
     addEventListenerTodoAddToProjectFromProject,
     addEventListenerCreateTodoFromProject,
     saveObjectToLocalStorage,
-    getObjectFromLocalStorage,
     fetchObjecsFromLocalStorage
 }
 
