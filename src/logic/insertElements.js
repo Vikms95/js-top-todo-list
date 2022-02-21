@@ -89,3 +89,7 @@ const addTodoToProjectFromProject = (projectObject,todoTitleToInsert) =>{
         return
     }
 }
+
+const updatePropertiesProjectOnLocalStorage = () => {
+    
+}

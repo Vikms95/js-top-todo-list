@@ -110,17 +110,19 @@ PROJECT GENERAL SCHEMA:
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
 
 
+- Delete todo from project still loads empty todo inside project after reload
+
+- Delete todo from project whenever checkmark is used from within the project
+
 - Implement localStorage:
     <!-- How to implement all the content inside localStorage on page load -->
     edge > if todo and project have same name, it does not know what to import
           : apply different protos to Project and Todo
         > .attachedProjectTodos from project object gets lost
+          : todo is saved in the session array whenever inserted, but not on the localstorage array (change it on addTodoToProjectFromTodo - addTodoToProjectFromTodo )
         > duplicated todos get lost when fetching them and only one is fetched
 
-
-- Delete todo from project still loads empty todo inside project after reload
-
-- Delete todo from project whenever checkmark is used from within the project
+https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
 
 - Implement instant update of page upon change
 

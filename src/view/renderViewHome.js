@@ -40,10 +40,9 @@ function renderViewHome () {
     projectsStorage.forEach(project =>{
         // if the project is not an empty string
         if(project){ 
-            console.log(projectsStorage)
             // if the project todo's list has any index which is not an empty object
             const isProjectWithTodos = project._attachedProjectTodos
-                .some(project => Object.keys(project).length > 0)
+                .some(todo => Object.keys(todo).length > 0)
 
             if((project._attachedProjectTodos.length > 0 && isProjectWithTodos)  ){
                 renderViewProject(project)
@@ -56,7 +55,7 @@ function renderViewHome () {
     projectsStorage.forEach(project =>{
         if(project){
             const isProjectWithNoTodos = project._attachedProjectTodos
-                .every(project => Object.keys(project).length === 0)
+                .every(todo => Object.keys(todo).length === 0)
 
             if((isProjectWithNoTodos))
                 renderViewProject(project)
