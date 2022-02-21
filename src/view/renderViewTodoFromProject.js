@@ -1,6 +1,6 @@
 import { askForTodoInput } from '../logic/createTodoObject'
 import { addEventListenerTodoDeleteButton } from '../logic/deleteElements'
-import { addEventListenerTodoAddToProject } from '../logic/insertElements'
+import { addEventListenerCheckmarkButton } from '../logic/deleteElements'
 
 // Will be called whenever the 'new todo' button is pressed,
 // it chain calls createTodoObject > askForTodoInput
@@ -68,6 +68,7 @@ function renderViewTodoFromProject(todoAsParameter){
     dueDate.style.color = checkTodoPriority(todoObject)
 
     // Add event listeners to buttons within the todo div
+    addEventListenerCheckmarkButton(checkmarkButton,todoObject)
     addEventListenerTodoDeleteButton(deleteButton, todoObject)
 
     // Return container to be appended in index.js

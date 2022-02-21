@@ -43,7 +43,7 @@ function renderViewProject(projectAsParameter){
     // Appends todos inside the projects ordered list
     if(projectObject._attachedProjectTodos.length > 0){
         projectObject._attachedProjectTodos.forEach(todo => {
-            if(!(Object.keys(todo).length === 0)){
+            if(!(Object.keys(todo).length === 0 && todo.checkmark === false)){
                 todoList.appendChild(renderViewTodoFromProject(todo))
             }
         })

@@ -7,11 +7,7 @@
 
 function newButtonEventListener(element, functionToUse) {
     element.addEventListener('click', () => {
-        const container = document.getElementById('content')
-        const element = functionToUse()
-        console.log(element)
-        if((element === null || element === undefined || !(element.nodeType))) return
-        container.appendChild(element)
+        functionToUse()
     })
 }
 

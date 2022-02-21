@@ -31,11 +31,23 @@ function addEventListenerCreateTodoFromProject (element,projectObject){
 }
 
 function saveObjectToLocalStorage(object){
-    localStorage.setItem(object.title, object)
+    localStorage.setItem(object.title, JSON.stringify(object))
 }
 
 function getObjectFromLocalStorage(objectKey){
-    return localStorage.getItem(objectKey)
+    return JSON.parse(localStorage.getItem(objectKey))
+}
+
+function fetchObjecsFromLocalStorage(){
+    let arrayOfKeys = Object.keys(localStorage)
+    arrayOfKeys.forEach(key =>{
+        console.log(key)
+
+        let object = localStorage.getItem(key)
+        todosStorage.push(object)
+        console.log(object.priority)
+    })
+    
 }
 
 export {
@@ -43,7 +55,8 @@ export {
     addEventListenerTodoAddToProjectFromProject,
     addEventListenerCreateTodoFromProject,
     saveObjectToLocalStorage,
-    getObjectFromLocalStorage
+    getObjectFromLocalStorage,
+    fetchObjecsFromLocalStorage
 }
 
 const addTodoToProjectFromTodo = (todoObject) =>{

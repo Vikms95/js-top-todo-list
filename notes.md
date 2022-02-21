@@ -109,9 +109,12 @@ PROJECT GENERAL SCHEMA:
 <!-- - Look into date-fns library
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
 
+
 - Implement localStorage:
     edge > if todo and project have same name, it does not know what to import
     How to implement all the content inside localStorage on page load
+    
+- Delete todo from project whenever checkmark is used from within the project
 
 - Implement instant update of page upon change
 
