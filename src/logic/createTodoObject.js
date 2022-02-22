@@ -25,8 +25,9 @@ const askForTodoInput = () => {
         return
     }
 
-    let todo = createTodoObject(title,22,2,2022,priority,description)
+    let todo = createTodoObject(title,20,2,2022,priority,description)
     todosStorage.push(todo)
+    console.log(todo.dueDay)
     saveObjectToLocalStorage(todo)
 
     return todo
@@ -35,6 +36,9 @@ const askForTodoInput = () => {
 const createTodoObject = (title,dueDay,dueMonth,dueYear,priority,description) => {
     const _id = generateTodoUniqueID() // It will be end up private, public for now
     const prototypeMadeUp = 'todo'
+    dueDay = dueDay
+    dueMonth = dueMonth
+    dueYear = dueYear
     let dueDate = format(new Date(dueYear,dueMonth, dueDay), 'MMMM, E d')
     let projectTitleItBelongs = ''
     let checkmark = false

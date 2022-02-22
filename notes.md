@@ -123,7 +123,7 @@ https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
 
 <!-- - Expand a single todo --> 
 
-- Work on today and upcoming todos
+- Work on today, past due and upcoming todos
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
 
 - Change todo priority on the go (use flag icons below the insert and delete buttons)

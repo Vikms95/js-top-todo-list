@@ -1,5 +1,9 @@
 import { todosStorage } from '../logic/objectsStorage'
 import { renderViewTodo } from './renderViewTodo'
+import isToday from 'date-fns/isToday'
+import { isEqual, setMilliseconds } from 'date-fns'
+import format from 'date-fns/format'
+import parse from 'date-fns/parseISO'
 
 function renderViewTodayTodos(){
     const dynamicElementsContainer = document.getElementById('dynamic-content')
@@ -7,16 +11,13 @@ function renderViewTodayTodos(){
     while(dynamicElementsContainer.firstChild){
         dynamicElementsContainer.firstChild.remove()
     }
-
-    let date = new Date()
-    let day = date.getDate()
-    let month = date.getMonth() + 1
-    let year = date.getFullYear()
-
-    
+   
     todosStorage.forEach(todo =>{
-        if(isToday(parseISO(todo.dueDate))){
+        const today = format(new Date(),'yyyy-M-dd')
+        const dateToCompare = format(new Date(todo.dueYear,todo.dueMonth - 1 ,todo.dueDay),'yyyy-M-dd')
+        if(today == dateToCompare){
             renderViewTodo(todo)
+            
         }
     })
 }
