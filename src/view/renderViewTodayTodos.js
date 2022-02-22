@@ -12,12 +12,15 @@ function renderViewTodayTodos(){
         dynamicElementsContainer.firstChild.remove()
     }
    
+    
     todosStorage.forEach(todo =>{
-        const today = format(new Date(),'yyyy-M-dd')
-        const dateToCompare = format(new Date(todo.dueYear,todo.dueMonth - 1 ,todo.dueDay),'yyyy-M-dd')
-        if(today == dateToCompare){
-            renderViewTodo(todo)
+        if(todo){
+            const today = format(new Date(),'yyyy-M-dd')
+            const dateToCompare = format(new Date(todo.dueYear,todo.dueMonth - 1 ,todo.dueDay),'yyyy-M-dd')
+            if(today == dateToCompare){
+                renderViewTodo(todo)
             
+            }
         }
     })
 }
