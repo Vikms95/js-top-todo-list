@@ -30,6 +30,8 @@ function renderViewHome () {
     
     todosStorage.forEach(todo =>{
         console.log(todosStorage)
+        console.log(projectsStorage)
+
         if(todo && (!(todo.projectTitleItBelongs)) && (!(todo.checkmark))){
             renderViewTodo(todo)
         }
@@ -40,7 +42,6 @@ function renderViewHome () {
     projectsStorage.forEach(project =>{
         // if the project is not an empty string
         if(project){ 
-            project = JSON.parse(project)
             console.log(project)
             // if the project todo's list has any index which is not an empty object
             const isProjectWithTodos = project._attachedProjectTodos
