@@ -1,4 +1,5 @@
 import { todosStorage, projectsStorage } from './objectsStorage'
+import { saveObjectToLocalStorage } from './insertElements'
 
 // This function is called whenever a todo is shown on display
 function addEventListenerTodoDeleteButton(element, todoObject) {
@@ -9,10 +10,9 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
             // Remove the property that attaches the todo to the project
             todoObject.projectTitleItBelongs = '' 
         }
-
-        deleteObjectFromStorageArray(todoObject, todosStorage)
-        localStorage.removeItem(todoObject.title)
           
+        removeObjectFromLocalStorage(todoObject)
+        removeObjectFromStorageArray(todoObject, todosStorage)
         // Call the function that removes todo from display (deleting child element)
         element.parentNode.parentNode.remove()
 
@@ -23,15 +23,23 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
 
 function addEventListenerProjectDeleteButton(element, projectObject) {
     element.addEventListener('click', () => {
+        
 
         // Let all todos inside the project know that they do not belong to any project anymore
-        projectObject._attachedProjectTodos = projectObject._attachedProjectTodos
-            .map(todo => todo.projectTitleItBelongs = '')
 
-            
+        projectObject._attachedProjectTodos.forEach(todo=>{
+            todo.projectTitleItBelongs = ''
+        })
+        
+
+        // Update all todos linked to that project on localStorage
+        projectObject._attachedProjectTodos.forEach(todo =>{
+            saveObjectToLocalStorage(todo)
+        })
+
         // Call the function that removes project from general project array
-        deleteObjectFromStorageArray(projectObject, projectsStorage)
-        localStorage.removeItem(projectObject.title)
+        removeObjectFromStorageArray(projectObject, projectsStorage)
+        removeObjectFromLocalStorage(projectObject)
             
         // Call the function that removes project from display (deleting child element)
         element.parentNode.parentNode.parentNode.parentNode.remove()
@@ -51,13 +59,18 @@ function addEventListenerCheckmarkButton(element,todoObject){
     })
 }
 
+function removeObjectFromLocalStorage (object) {
+    console.log(object.title)
+    localStorage.removeItem(object.title)
+}
+
 export {
     addEventListenerTodoDeleteButton,
     addEventListenerProjectDeleteButton,
     addEventListenerCheckmarkButton
 }
 
-const deleteObjectFromStorageArray = (object, array) => {
+const removeObjectFromStorageArray = (object, array) => {
     for (let i = 0; i < array.length; i++) {
         if (array[i]._id === object._id) {
             array[i] = ''
@@ -73,7 +86,9 @@ const deleteTodoFromProjectArray = (todoObject) =>{
     //Look for the todo in the project's array change it's index into an empty string
     for (let i = 0; i < projectToRemoveTodo._attachedProjectTodos.length; i++) {
         if(projectToRemoveTodo._attachedProjectTodos[i]._id === todoObject._id){
-            projectToRemoveTodo._attachedProjectTodos[i] = {}
+            projectToRemoveTodo._attachedProjectTodos[i] = ''
+            console.log(projectToRemoveTodo)
+            saveObjectToLocalStorage(projectToRemoveTodo)
         }
     }
 }

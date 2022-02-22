@@ -41,8 +41,7 @@ function renderViewHome () {
 
     projectsStorage.forEach(project =>{
         // if the project is not an empty string
-        if(project){ 
-            console.log(project)
+        if(project && project._attachedProjectTodos){ 
             // if the project todo's list has any index which is not an empty object
             const isProjectWithTodos = project._attachedProjectTodos
                 .some(todo => Object.keys(todo).length > 0)
@@ -56,7 +55,7 @@ function renderViewHome () {
     dynamicElementsContainer.appendChild(emptyProjectsHeader)
 
     projectsStorage.forEach(project =>{
-        if(project){
+        if(project && project._attachedProjectTodos){
             const isProjectWithNoTodos = project._attachedProjectTodos
                 .every(todo => Object.keys(todo).length === 0)
 
