@@ -118,8 +118,7 @@ https://www.section.io/engineering-education/javascript-dates-manipulation-with-
     <!-- How to implement all the content inside localStorage on page load -->
     <!-- edge if todo and project have same name, it does not know what to import
         : apply different protos to Project and Todo -->
-        : deleting a project turns it into undefined within localStorage
-        : todo is saved in the session array whenever inserted, but not on the localstorage array (change it on addTodoToProjectFromTodo - addTodoToProjectFromTodo, replace the project on localStorage with current project with the todo-list updated )
+        : deleting a project after deleting a todo from inside turns it into undefined within localStorage
          > duplicated todos get lost when fetching them and only one is fetched
 
 https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/

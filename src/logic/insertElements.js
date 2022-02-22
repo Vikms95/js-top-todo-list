@@ -29,7 +29,7 @@ function addEventListenerCreateTodoFromProject (element,projectObject){
         projectObject._attachedProjectTodos.push(todo)
         todo.projectTitleItBelongs = projectObject.title
         saveObjectToLocalStorage(todo)
-        saveObjectToLocalStorage(projectObject.title,projectObject)
+        saveObjectToLocalStorage(projectObject)
         renderViewTodoFromProject(todo)
     })
 }
@@ -95,12 +95,10 @@ const addTodoToProjectFromProject = (projectObject,todoTitleToInsert) =>{
         projectObject._attachedProjectTodos.push(todoToAddProject)
         todoToAddProject.projectTitleItBelongs = projectObject.title
         saveObjectToLocalStorage(todoToAddProject)
+        saveObjectToLocalStorage(projectObject)
     }else{
         alert('Task already assigned to a project or does not exist.')
         return
     }
 }
 
-const updatePropertiesProjectOnLocalStorage = () => {
-
-}
