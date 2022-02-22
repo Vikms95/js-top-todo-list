@@ -18,8 +18,8 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
     element.addEventListener('click', () =>{
         const todoTitleToInsert = prompt('Insert the todo title that you want to add to this project')
         if(todoTitleToInsert === null){return}
+        saveObjectToLocalStorage(projectObject)      
         addTodoToProjectFromProject(projectObject,todoTitleToInsert)
-        localStorage.setItem(projectObject.title,projectObject)        
     })
 }
 
@@ -28,13 +28,14 @@ function addEventListenerCreateTodoFromProject (element,projectObject){
         const todo = askForTodoInput()
         projectObject._attachedProjectTodos.push(todo)
         todo.projectTitleItBelongs = projectObject.title
+        saveObjectToLocalStorage(todo)
         saveObjectToLocalStorage(projectObject.title,projectObject)
         renderViewTodoFromProject(todo)
     })
 }
 
 function saveObjectToLocalStorage(object){
-    let isObjectInLocalStorage = localStorage.getItem(object.title)
+    // Add checking of object existing within localStorage
     localStorage.setItem(object.title, JSON.stringify(object))
 }
 
@@ -75,8 +76,9 @@ const addTodoToProjectFromTodo = (todoObject) =>{
 
     if(projectToAddTodo){
         projectToAddTodo._attachedProjectTodos.push(todoObject)
-        localStorage.setItem(projectTitleToInsert,projectToAddTodo)        
         todoObject.projectTitleItBelongs = projectTitleToInsert
+        saveObjectToLocalStorage(todoObject)
+        localStorage.setItem(projectTitleToInsert,JSON.stringify(projectToAddTodo))        
     }else{
         alert('Project does not exist. Make sure the title is well written or create the project.')
         return 
@@ -90,6 +92,7 @@ const addTodoToProjectFromProject = (projectObject,todoTitleToInsert) =>{
     if(todoToAddProject && (!(todoToAddProject.projectTitleItBelongs))){
         projectObject._attachedProjectTodos.push(todoToAddProject)
         todoToAddProject.projectTitleItBelongs = projectObject.title
+        saveObjectToLocalStorage(todoToAddProject)
     }else{
         alert('Task already assigned to a project or does not exist.')
         return
