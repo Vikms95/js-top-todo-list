@@ -1,7 +1,7 @@
 import { askForTodoInput } from '../logic/createTodoObject'
 import { addEventListenerTodoDeleteButton } from '../logic/deleteElements'
 import { addEventListenerCheckmarkButton } from '../logic/deleteElements'
-
+import { addEventListenerExpandTodo } from '../logic/modifyElements'
 // Will be called whenever the 'new todo' button is pressed,
 // it chain calls createTodoObject > askForTodoInput
 function renderViewTodoFromProject(todoAsParameter){
@@ -16,6 +16,7 @@ function renderViewTodoFromProject(todoAsParameter){
     const checkmarkButton = document.createElement('button')
     const todo = document.createElement('div')
     const buttons = document.createElement('div')
+    const expandButton = document.createElement('button')
     const deleteButton = document.createElement('button')
 
     // Create header div (row) with 2 divs, title h1 and dueDate div
@@ -30,6 +31,7 @@ function renderViewTodoFromProject(todoAsParameter){
     checkmark.appendChild(checkmarkButton)
 
     // Appends buttons to buttons container
+    buttons.appendChild(expandButton)
     buttons.appendChild(deleteButton)
 
     // Append to todo div > header div, description div
@@ -62,6 +64,7 @@ function renderViewTodoFromProject(todoAsParameter){
     checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-2xs"></i>'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
+    expandButton.innerHTML = '<i class="fa-solid fa-angle-down"></i>'
     deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
 
     // Change title bg depending on property value 'priority'
@@ -69,6 +72,7 @@ function renderViewTodoFromProject(todoAsParameter){
 
     // Add event listeners to buttons within the todo div
     addEventListenerCheckmarkButton(checkmarkButton,todoObject)
+    addEventListenerExpandTodo(expandButton,todoObject,todo)
     addEventListenerTodoDeleteButton(deleteButton, todoObject)
 
     // Return container to be appended in index.js

@@ -33,7 +33,7 @@ export {askForProjectInput}
 
 
 const generateProjectUniqueID = (function () {
-    let id = 0
+    let id = 1000
     return function () {
         return id++
     }

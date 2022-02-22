@@ -1,9 +1,8 @@
 import {renderViewProject} from './renderViewProject'
 
 import { renderViewDefaultProject } from './renderViewDefaultProject'
-
 import { renderViewHome } from './renderViewHome'
-
+import { renderViewTodayTodos } from './renderViewTodayTodos'
 import renderViewTodo from './renderViewTodo'
 
 import newButtonEventListener from '../logic/createStaticElements'
@@ -132,6 +131,8 @@ function renderStaticElementsView() {
     newButtonEventListener(generalProjectButton,renderViewHome)
 
     newButtonEventListener(defaultProjectButton,renderViewDefaultProject)
+
+    newButtonEventListener(todayTodosButton,renderViewTodayTodos)
 
     newButtonEventListener(newProjectButton, askForProjectInput)
 

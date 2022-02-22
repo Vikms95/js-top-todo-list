@@ -87,6 +87,7 @@ const deleteTodoFromProjectArray = (todoObject) =>{
     for (let i = 0; i < projectToRemoveTodo._attachedProjectTodos.length; i++) {
         if(projectToRemoveTodo._attachedProjectTodos[i]._id === todoObject._id){
             projectToRemoveTodo._attachedProjectTodos[i] = {}
+            console.log(projectToRemoveTodo)
             saveObjectToLocalStorage(projectToRemoveTodo)
         }
     }

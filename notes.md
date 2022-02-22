@@ -106,8 +106,6 @@ PROJECT GENERAL SCHEMA:
 
 <!-- - Nav bar breaks whenever page is shrinked vertically -->
 
-<!-- - Look into date-fns library
-https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
 
 
 <!-- - Delete todo from project still loads empty todo inside project after reload
@@ -123,6 +121,11 @@ https://www.section.io/engineering-education/javascript-dates-manipulation-with-
 
 https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
 
-- Implement instant update of page upon change
+<!-- - Expand a single todo --> 
 
-- Expand a single todo
+- Work on today and upcoming todos
+https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ -->
+
+- Change todo priority on the go (use flag icons below the insert and delete buttons)
+
+- Implement instant update of page upon change

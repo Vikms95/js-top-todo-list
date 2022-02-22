@@ -1,12 +1,28 @@
+import { saveObjectToLocalStorage } from './insertElements'
 import { projectsStorage } from './objectsStorage'
 
-const addEventListenerToogleDefaultStateButton = (element,projectObject) => {
+function addEventListenerToogleDefaultStateButton (element,projectObject) {
     element.addEventListener('click', () =>{
         tooggleDefaultState(projectObject)
+        saveObjectToLocalStorage(projectObject)
     })
 }
 
-export {addEventListenerToogleDefaultStateButton}
+function addEventListenerExpandTodo(element, todoObject,elementToAppend) {
+    element.addEventListener('click', ()=> {
+        if(elementToAppend.childNodes.length > 2){
+            elementToAppend.removeChild(elementToAppend.lastChild)
+        }else{
+            const description = document.createElement('div')
+            description.classList.add('description')
+            elementToAppend.appendChild(description)
+            description.textContent = todoObject.description
+        }
+    })
+}
+
+
+export {addEventListenerToogleDefaultStateButton,addEventListenerExpandTodo}
 
 let tooggleDefaultState = (projectObject) =>{
     if(!(projectObject.isDefault)){
