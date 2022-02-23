@@ -8,22 +8,24 @@ function addEventListenerToogleDefaultStateButton (element,projectObject) {
     })
 }
 
-function addEventListenerExpandTodo(element, todoObject,elementToAppend) {
+function addEventListenerExpandTodo(element, todoObject,elementToAppend1,elementToAppend2,flags) {
     element.addEventListener('click', ()=> {
-        if(elementToAppend.childNodes.length > 2){
-            elementToAppend.removeChild(elementToAppend.lastChild)
+        if(elementToAppend1.childNodes.length > 2){
+            elementToAppend1.removeChild(elementToAppend1.lastChild)
+            elementToAppend2.removeChild(elementToAppend2.lastChild)
+
         }else{
             const description = document.createElement('div')
             description.classList.add('description')
-            elementToAppend.appendChild(description)
+            elementToAppend1.appendChild(description)
             description.textContent = todoObject.description
+            elementToAppend2.appendChild(flags)
         }
     })
 }
 
 function addEventListenerPriorityButton(element,todoObject,dueDate){
     element.addEventListener('click',() =>{
-        console.log(element.firstChild.classList)
         if(element.firstChild.classList.contains('blue')){
             todoObject.priority = 1
             dueDate.style.color = 'blue'
@@ -34,8 +36,17 @@ function addEventListenerPriorityButton(element,todoObject,dueDate){
             todoObject.priority = 3
             dueDate.style.color = 'red'
         }
-        console.log(todoObject)
+
         saveObjectToLocalStorage(todoObject)
+
+        if(todoObject.projectTitleItBelongs){
+            console.log('hi')
+            // Search for the projectTitleItBelongs in projectStorage
+            const projectToUpdate = projectsStorage
+                .find(project => project.title === todoObject.projectTitleItBelongs)
+            // get that project and save it to localstorage
+            saveObjectToLocalStorage(projectToUpdate)
+        }
     })
 }
 

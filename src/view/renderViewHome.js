@@ -29,8 +29,6 @@ function renderViewHome () {
     dynamicElementsContainer.appendChild(notAttachedTodosHeader)
     
     todosStorage.forEach(todo =>{
-        console.log(todosStorage)
-        console.log(projectsStorage)
 
         if(todo && (!(todo.projectTitleItBelongs)) && (!(todo.checkmark))){
             renderViewTodo(todo)

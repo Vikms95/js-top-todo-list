@@ -40,7 +40,6 @@ function renderViewTodoFromProject(todoAsParameter){
 
     // Appends buttons to buttons container
     buttonsContainer.appendChild(buttons)
-    buttonsContainer.appendChild(flags)
     buttons.appendChild(expandButton)
     buttons.appendChild(deleteButton)
     flags.appendChild(flagBlueButton)
@@ -104,7 +103,7 @@ function renderViewTodoFromProject(todoAsParameter){
 
     // Add event listeners to buttons within the todo div
     addEventListenerCheckmarkButton(checkmarkButton,todoObject)
-    addEventListenerExpandTodo(expandButton,todoObject,todo)
+    addEventListenerExpandTodo(expandButton,todoObject,todo,buttonsContainer,flags)
     addEventListenerTodoDeleteButton(deleteButton, todoObject)
     addEventListenerPriorityButton(flagBlueButton,todoObject,dueDateDiv)
     addEventListenerPriorityButton(flagOrangeButton,todoObject,dueDateDiv)

@@ -128,4 +128,6 @@ https://www.section.io/engineering-education/javascript-dates-manipulation-with-
 
 <!-- - Change todo priority on the go (use flag icons below the insert and delete buttons) DO NOT FORGET TO UPDATE LOCAL STORAGE -->
 
+<!-- - Todos from within projects are not updating priority in the attachedProjectTodoList -->
+
 - Implement instant update of page upon change

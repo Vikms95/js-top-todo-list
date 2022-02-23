@@ -16,8 +16,6 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
         // Call the function that removes todo from display (deleting child element)
         element.parentNode.parentNode.parentNode.remove()
 
-        console.log(todosStorage)
-        console.log(projectsStorage)
     })
 }
 
@@ -44,8 +42,6 @@ function addEventListenerProjectDeleteButton(element, projectObject) {
         // Call the function that removes project from display (deleting child element)
         element.parentNode.parentNode.parentNode.parentNode.remove()
         
-        console.log(todosStorage)
-        console.log(projectsStorage)
     })
 }
 
@@ -62,7 +58,6 @@ function addEventListenerCheckmarkButton(element,todoObject){
 }
 
 function removeObjectFromLocalStorage (object) {
-    console.log(object.title)
     localStorage.removeItem(object.title)
 }
 
@@ -89,7 +84,6 @@ const deleteTodoFromProjectArray = (todoObject) =>{
     for (let i = 0; i < projectToRemoveTodo._attachedProjectTodos.length; i++) {
         if(projectToRemoveTodo._attachedProjectTodos[i]._id === todoObject._id){
             projectToRemoveTodo._attachedProjectTodos[i] = {}
-            console.log(projectToRemoveTodo)
             saveObjectToLocalStorage(projectToRemoveTodo)
         }
     }
