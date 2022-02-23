@@ -73,7 +73,7 @@ function renderViewTodoFromProject(todoAsParameter){
     title.classList.add('title')
     circle.classList.add('fa-solid')
     circle.classList.add('fa-circle')
-    circle.classList.add('fa-sm')
+    circle.classList.add('fa-2xs')
     dueDateDiv.classList.add('due-date')
     
     checkmarkButton.setAttribute('title','Checkmark task')
