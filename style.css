@@ -107,6 +107,7 @@ i{
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-width: 100px;
 }
 
 .buttons{
@@ -168,6 +169,8 @@ button:active{
     text-align: center;
     height: 26px;
     width: 26px;
+    min-width: 26px;
+    min-height: 26px;
     padding: 0px;
     margin-top: 5px;
     border: solid 1px grey;
