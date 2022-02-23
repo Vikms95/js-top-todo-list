@@ -141,6 +141,10 @@ button:hover{
     border-radius: 10px;
 }
 
+button:active{
+    transform: translateY(4px);
+}
+
 .fa-flag.blue{
     color:blue;
 }
