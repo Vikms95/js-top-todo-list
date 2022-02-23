@@ -54,18 +54,24 @@ function renderViewTodoFromProject(todoAsParameter){
     title.classList.add('todo')
     title.classList.add('title')
     dueDate.classList.add('due-date')
+    
+    checkmarkButton.setAttribute('title','Checkmark task')
+    expandButton.setAttribute('title','Expand task')
+    deleteButton.setAttribute('title','Delete task')
  
     // Add fading animation on todo creation
     requestAnimationFrame(() => {
         container.classList.remove('faded-out')
     })
   
+
     // Change text content of divs depending on the property values from the object
     checkmarkButton.innerHTML = '<i class="fa-solid fa-check fa-2xs"></i>'
     title.textContent = todoObject.title
     dueDate.textContent = todoObject.dueDate
     expandButton.innerHTML = '<i class="fa-solid fa-angle-down"></i>'
     deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'
+
 
     // Change title bg depending on property value 'priority'
     dueDate.style.color = checkTodoPriority(todoObject)

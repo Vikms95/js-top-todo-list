@@ -60,6 +60,11 @@ function renderViewProject(projectAsParameter){
     title.classList.add('title')
     todoListContainer.classList.add('todo-list-container')
     todoList.classList.add('todo-list')
+    
+    createTodoFromProject.setAttribute('title','Create task in this project')
+    addTodoToProjectButton.setAttribute('title','Add existing task')
+    toggleDefaultStateButton.setAttribute('title','Toogle project default')
+    deleteButton.setAttribute('title','Delete project')
 
     // Add fading animation on project creation
     requestAnimationFrame(() => {
@@ -68,6 +73,7 @@ function renderViewProject(projectAsParameter){
   
 
     // Change text content of divs depending on the property values from the object
+    
     createTodoFromProject.innerHTML = '<i class="fa-solid fa-plus fa-lg"></i>'
     addTodoToProjectButton.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>'
     deleteButton.innerHTML = '<i class="fa-solid fa-trash-can fa-lg">'

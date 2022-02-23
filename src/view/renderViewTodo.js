@@ -58,6 +58,10 @@ function renderViewTodo (todoAsParameter) {
     description.classList.add('todo')
     description.classList.add('description')
 
+    checkmarkButton.setAttribute('title','Checkmark task')
+    addTodoToProjectButton.setAttribute('title','Add this task to a project')
+    deleteButton.setAttribute('title','Delete task')
+
     // Add fading animation on todo creation
     requestAnimationFrame(() => {
         container.classList.remove('faded-out')
