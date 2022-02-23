@@ -62,7 +62,6 @@ PROJECT GENERAL SCHEMA:
     ! Was using todo event listener
 
 <!-- - Attach todo to project from todo -->
-- Make the project input to insert todo case insensitive  
 <!-- - Make projects imposible to have same title, return a value to know the rendering has to be canceled: -->
 <!-- - Attach todo to project from project:
     storing todos but showing alert that todo does not exist -->
@@ -112,14 +111,6 @@ PROJECT GENERAL SCHEMA:
 
 - Delete todo from project whenever checkmark is used from within the project -->
 
-- Implement localStorage:
-    <!-- How to implement all the content inside localStorage on page load -->
-    <!-- edge if todo and project have same name, it does not know what to import
-        : apply different protos to Project and Todo -->
-        : deleting a project after deleting a todo from inside turns it into undefined within localStorage
-         > duplicated todos get lost when fetching them and only one is fetched
-
-https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
 
 <!-- - Expand a single todo --> 
 
@@ -129,5 +120,20 @@ https://www.section.io/engineering-education/javascript-dates-manipulation-with-
 <!-- - Change todo priority on the go (use flag icons below the insert and delete buttons) DO NOT FORGET TO UPDATE LOCAL STORAGE -->
 
 <!-- - Todos from within projects are not updating priority in the attachedProjectTodoList -->
+
+- Implement localStorage:
+https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
+    <!-- How to implement all the content inside localStorage on page load -->
+    <!-- edge if todo and project have same name, it does not know what to import
+        : apply different protos to Project and Todo -->
+        : deleting a project after deleting a todo from inside turns it into undefined within localStorage
+         > duplicated todos get lost when fetching them and only one is fetched
+
+- Make the project input to insert todo case insensitive  
+
+- Removing one project removes them all from projectStorage
+
+- Refactor into slight OOP
+  :make a list of what project can do and todo can do
 
 - Implement instant update of page upon change

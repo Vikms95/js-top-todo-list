@@ -1,9 +1,6 @@
 import { todosStorage } from '../logic/objectsStorage'
 import { renderViewTodo } from './renderViewTodo'
-import isToday from 'date-fns/isToday'
-import { isEqual, setMilliseconds } from 'date-fns'
 import format from 'date-fns/format'
-import parse from 'date-fns/parseISO'
 
 function renderViewTodayTodos(){
     const dynamicElementsContainer = document.getElementById('dynamic-content')

@@ -2,7 +2,7 @@ import { todosStorage } from './objectsStorage'
 import { format } from 'date-fns'
 import { saveObjectToLocalStorage } from './insertElements'
 
-const askForTodoInput = () => {
+function askForTodoInput(){
     let title = prompt('Enter title')
   
     if(title === null){
@@ -32,7 +32,8 @@ const askForTodoInput = () => {
     return todo
 }
 
-const createTodoObject = (title,dueDay,dueMonth,dueYear,priority,description) => {
+function createTodoObject(title,dueDay,dueMonth,dueYear,priority,description){
+
     const _id = generateTodoUniqueID() // It will be end up private, public for now
     const prototypeMadeUp = 'todo'
     dueDay = dueDay

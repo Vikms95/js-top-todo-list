@@ -29,6 +29,7 @@ function addEventListenerProjectDeleteButton(element, projectObject) {
             todo.projectTitleItBelongs = ''
         })
         
+        removeObjectFromStorageArray(projectObject, projectsStorage)
 
         // Update all todos linked to that project on localStorage
         projectObject._attachedProjectTodos.forEach(todo =>{
@@ -36,7 +37,6 @@ function addEventListenerProjectDeleteButton(element, projectObject) {
         })
 
         // Call the function that removes project from general project array
-        removeObjectFromStorageArray(projectObject, projectsStorage)
         removeObjectFromLocalStorage(projectObject)
             
         // Call the function that removes project from display (deleting child element)
@@ -73,6 +73,7 @@ const removeObjectFromStorageArray = (object, array) => {
             array[i] = ''
         }
     }
+    console.log(array)
 }
 
 const deleteTodoFromProjectArray = (todoObject) =>{
