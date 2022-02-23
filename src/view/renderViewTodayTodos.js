@@ -26,7 +26,7 @@ function renderViewTodayTodos(){
 
     if (dynamicElementsContainer.childNodes.length === 0){
         const noWorkForTodayDiv = document.createElement('h1')
-        noWorkForTodayDiv.classList.add('empty-today')
+        noWorkForTodayDiv.classList.add('home-header')
         noWorkForTodayDiv.textContent= 'It seems like you are done for today!'
         dynamicElementsContainer.appendChild(noWorkForTodayDiv)
     }

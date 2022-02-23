@@ -8,6 +8,7 @@ import renderViewTodo from './renderViewTodo'
 import newButtonEventListener from '../logic/createStaticElements'
 import { askForProjectInput } from '../logic/createProjectObject'
 import { askForTodoInput } from '../logic/createTodoObject'
+import { renderViewUpcomingTodos } from './renderViewUpcomingTodos'
 
 
 
@@ -133,6 +134,8 @@ function renderStaticElementsView() {
     newButtonEventListener(defaultProjectButton,renderViewDefaultProject)
 
     newButtonEventListener(todayTodosButton,renderViewTodayTodos)
+
+    newButtonEventListener(upcomingTodosButton,renderViewUpcomingTodos)
 
     newButtonEventListener(newProjectButton, askForProjectInput)
 
