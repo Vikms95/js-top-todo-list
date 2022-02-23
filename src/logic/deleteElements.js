@@ -53,8 +53,10 @@ function addEventListenerCheckmarkButton(element,todoObject){
     element.addEventListener('click', () => {
         if(todoObject.checkmark === false){
             todoObject.checkmark = true
+            saveObjectToLocalStorage(todoObject)
         }else{
             todoObject.checkmark = false
+            saveObjectToLocalStorage(todoObject)
         }
     })
 }

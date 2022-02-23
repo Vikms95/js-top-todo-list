@@ -22,7 +22,7 @@ function renderViewUpcomingTodos(){
 
     todosStorage.forEach(todo =>{
         if(todo){
-            if(isPast(new Date(todo.dueYear,todo.dueMonth - 1 ,todo.dueDay + 1)))
+            if(isPast(new Date(todo.dueYear,todo.dueMonth - 1 ,todo.dueDay + 1)) && todo.checkmark === false)
                 renderViewTodo(todo)
         }
     })
@@ -32,7 +32,7 @@ function renderViewUpcomingTodos(){
     todosStorage.forEach(todo =>{
         if(todo){
             let dueDate = new Date(todo.dueYear,todo.dueMonth - 1 ,todo.dueDay)
-            if(isThisMonth(dueDate) || isThisWeek(dueDate)){
+            if((isThisMonth(dueDate) || isThisWeek(dueDate)) && todo.checkmark === false ){
                 renderViewTodo(todo)
             }
         }
