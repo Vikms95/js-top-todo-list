@@ -25,7 +25,7 @@ const askForTodoInput = () => {
         return
     }
 
-    let todo = createTodoObject(title,20,2,2022,priority,description)
+    let todo = createTodoObject(title,24,2,2022,priority,description)
     todosStorage.push(todo)
     console.log(todo.dueDay)
     saveObjectToLocalStorage(todo)

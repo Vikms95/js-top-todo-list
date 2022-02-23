@@ -126,6 +126,6 @@ https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
 <!-- - Work on today, past due and upcoming todos
 https://www.section.io/engineering-education/javascript-dates-manipulation-with-date-fns/ --> -->
 
-- Change todo priority on the go (use flag icons below the insert and delete buttons) DO NOT FORGET TO UPDATE LOCAL STORAGE
+<!-- - Change todo priority on the go (use flag icons below the insert and delete buttons) DO NOT FORGET TO UPDATE LOCAL STORAGE -->
 
 - Implement instant update of page upon change

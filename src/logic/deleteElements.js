@@ -14,7 +14,7 @@ function addEventListenerTodoDeleteButton(element, todoObject) {
         removeObjectFromLocalStorage(todoObject)
         removeObjectFromStorageArray(todoObject, todosStorage)
         // Call the function that removes todo from display (deleting child element)
-        element.parentNode.parentNode.remove()
+        element.parentNode.parentNode.parentNode.remove()
 
         console.log(todosStorage)
         console.log(projectsStorage)

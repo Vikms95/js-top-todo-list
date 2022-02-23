@@ -103,9 +103,14 @@ i{
 
 }
 
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
 .buttons{
-    opacity:0.3;
+    opacity:0.6;
     transition: all 0.2s;
     display: flex;
     border:none;
@@ -134,6 +139,25 @@ button:hover{
 .buttons.right > button:hover{
     background-color: rgb(242, 241, 241);
     border-radius: 10px;
+}
+
+.fa-flag.blue{
+    color:blue;
+}
+.fa-flag.orange{
+    color:orange;
+}
+.fa-flag.red{
+    color: red;
+}
+
+.fa.fa-circle{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+
+.due-date{
+    display: flex;
+    gap: 5px;
 }
 
 .checkmark{

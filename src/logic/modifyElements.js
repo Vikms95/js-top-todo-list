@@ -21,8 +21,29 @@ function addEventListenerExpandTodo(element, todoObject,elementToAppend) {
     })
 }
 
+function addEventListenerPriorityButton(element,todoObject,dueDate){
+    element.addEventListener('click',() =>{
+        console.log(element.firstChild.classList)
+        if(element.firstChild.classList.contains('blue')){
+            todoObject.priority = 1
+            dueDate.style.color = 'blue'
+        }else if(element.firstChild.classList.contains('orange')){
+            todoObject.priority = 2
+            dueDate.style.color = 'orange'
+        }else if(element.firstChild.classList.contains('red')){
+            todoObject.priority = 3
+            dueDate.style.color = 'red'
+        }
+        console.log(todoObject)
+        saveObjectToLocalStorage(todoObject)
+    })
+}
 
-export {addEventListenerToogleDefaultStateButton,addEventListenerExpandTodo}
+export {
+    addEventListenerToogleDefaultStateButton,
+    addEventListenerExpandTodo,
+    addEventListenerPriorityButton
+}
 
 let tooggleDefaultState = (projectObject) =>{
     if(!(projectObject.isDefault)){
