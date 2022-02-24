@@ -15,10 +15,8 @@ function renderViewHome () {
     const checkmarkedTodosHeader = document.createElement('h3')
 
     notAttachedTodosHeader.classList.add('home-header')
-    notAttachedTodosHeader.classList.add('not-attached')
     projectsWithTodosHeader.classList.add('home-header')
     emptyProjectsHeader.classList.add('home-header')
-    emptyProjectsHeader.classList.add('empty-projects')
     checkmarkedTodosHeader.classList.add('home-header')
 
     notAttachedTodosHeader.textContent = 'Unnattached task'
