@@ -18,8 +18,8 @@ function addEventListenerTodoAddToProjectFromProject (element,projectObject){
     element.addEventListener('click', () =>{
         const todoTitleToInsert = prompt('Insert the todo title that you want to add to this project')
         if(todoTitleToInsert === null){return}
-        saveObjectToLocalStorage(projectObject)      
         addTodoToProjectFromProject(projectObject,todoTitleToInsert)
+        saveObjectToLocalStorage(projectObject)      
     })
 }
 
@@ -53,7 +53,6 @@ function fetchObjecsFromLocalStorage(){
             }
         }
     })
-    
 }
 
 export {
@@ -71,7 +70,9 @@ const addTodoToProjectFromTodo = (todoObject) =>{
 
     //Find if project exist, if it does, store it
     const projectToAddTodo = projectsStorage
-        .find(project => project.title === projectTitleToInsert)
+        .find(project => project.title ===projectTitleToInsert)
+
+    console.log(projectToAddTodo)
 
     if(projectToAddTodo){
         projectToAddTodo._attachedProjectTodos.push(todoObject)
@@ -86,8 +87,10 @@ const addTodoToProjectFromTodo = (todoObject) =>{
 
 const addTodoToProjectFromProject = (projectObject,todoTitleToInsert) =>{
     const todoToAddProject = todosStorage
-        .find(todo => todo.title === todoTitleToInsert)
+        .find(todo => todo.title === todoTitleToInsert )
 
+    
+    console.log(todoToAddProject)
     if(todoToAddProject && (!(todoToAddProject.projectTitleItBelongs))){
         projectObject._attachedProjectTodos.push(todoToAddProject)
         todoToAddProject.projectTitleItBelongs = projectObject.title

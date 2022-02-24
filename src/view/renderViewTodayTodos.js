@@ -1,5 +1,6 @@
 import { todosStorage } from '../logic/objectsStorage'
 import { renderViewTodo } from './renderViewTodo'
+import noContentImage from '../images/noContentImage.jpg'
 import format from 'date-fns/format'
 
 function renderViewTodayTodos(){
@@ -22,10 +23,18 @@ function renderViewTodayTodos(){
     })
 
     if (dynamicElementsContainer.childNodes.length === 0){
-        const noWorkForTodayDiv = document.createElement('h1')
-        noWorkForTodayDiv.classList.add('home-header')
-        noWorkForTodayDiv.textContent= 'It seems like you are done for today!'
-        dynamicElementsContainer.appendChild(noWorkForTodayDiv)
+        const noWorkForTodayHeader = document.createElement('h1')
+        const imageDiv = document.createElement('div')
+        const image = new Image()
+        image.src = noContentImage
+        console.log('hi')
+
+        dynamicElementsContainer.appendChild(noWorkForTodayHeader)
+        dynamicElementsContainer.appendChild(imageDiv)
+        imageDiv.appendChild(image)
+
+        noWorkForTodayHeader.classList.add('no-content-header')
+        noWorkForTodayHeader.textContent= 'It seems like you are done for today!'
     }
 }
 

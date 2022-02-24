@@ -7,25 +7,34 @@ function askForTodoInput(){
   
     if(title === null){
         return null
+
     }else if(title.length < 1 || title.length > 40){
         alert('Title needs a min of 1 character and no more than 40 characters!')
         return
     }
 
-    // let dueDate = prompt('Enter due date')
+    let dueYear = prompt('Enter due year')
+    let dueMonth = prompt('Enter due month')
+    let dueDay = prompt ('Enter due day')
 
-    let priority = prompt('Enter priority (1 = low, 3 = high)')
+    if(isNaN(dueYear) || isNaN(dueMonth) || isNaN(dueDay)){
+        alert('Due date values must be numbers!')
+        return    
+    }
+
+    let priority = prompt('Enter priority (1 = low, 2 = medium, 3 = high)')
     if(priority === null) return null
 
     let description = prompt('Enter description')
     if(description === null){ 
         return null
+
     }else if(description.length > 80){
         alert('Description can\'t be more than 80 characters!')
         return
     }
 
-    let todo = createTodoObject(title,24,2,2022,priority,description)
+    let todo = createTodoObject(title,dueDay,dueMonth,dueYear,priority,description)
     todosStorage.push(todo)
     saveObjectToLocalStorage(todo)
 
@@ -58,7 +67,6 @@ function createTodoObject(title,dueDay,dueMonth,dueYear,priority,description){
     }
 }
 
-//TODO Convert to prototype method?
 const generateTodoUniqueID = (function () {
     let id = 0
     return function () {

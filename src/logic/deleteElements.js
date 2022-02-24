@@ -73,7 +73,6 @@ const removeObjectFromStorageArray = (object, array) => {
             array[i] = ''
         }
     }
-    console.log(array)
 }
 
 const deleteTodoFromProjectArray = (todoObject) =>{

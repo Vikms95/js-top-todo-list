@@ -129,11 +129,4 @@ https://gomakethings.com/how-to-update-localstorage-with-vanilla-javascript/
         : deleting a project after deleting a todo from inside turns it into undefined within localStorage
          > duplicated todos get lost when fetching them and only one is fetched
 
-- Make the project input to insert todo case insensitive  
-
-- Removing one project removes them all from projectStorage
-
-- Refactor into slight OOP
-  :make a list of what project can do and todo can do
-
 - Implement instant update of page upon change

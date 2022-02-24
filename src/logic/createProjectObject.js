@@ -3,7 +3,6 @@ import { saveObjectToLocalStorage } from './insertElements'
 
 function askForProjectInput(){
     let title = prompt('Enter title')
-    
     const project = Project(title)
     
     if(!(project.isProjectTitleValid(title))){
@@ -21,10 +20,6 @@ function Project(title){
     let isDefault = false 
     let _attachedProjectTodos = [] // Will store ID, then get compared with todosStorage, will be private
     
-    const getID = () =>{
-        return this._id
-    }
-
     const isProjectTitleValid = (title) =>{
         // Check if user has finished the alert via cancel button
         if(title === null){
