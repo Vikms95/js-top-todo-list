@@ -1,4 +1,4 @@
-👉 [LIVE PREVIEW](https://vikms95.github.io/js-top-todo-list/) 👈
+# 👉 [LIVE PREVIEW](https://vikms95.github.io/js-top-todo-list/) 👈
 
 - Ideas of what I want to apply to this project:
     - Factory functions
